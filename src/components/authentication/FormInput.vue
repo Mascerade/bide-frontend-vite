@@ -8,7 +8,7 @@
   />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 //       style="background-color: #f4f8f7"

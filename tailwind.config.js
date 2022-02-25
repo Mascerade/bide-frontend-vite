@@ -7,9 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ['Montserrat'],
-        poppins: ['Poppins'],
-        quicksand: ['Quicksand']
+        quicksand: ['Quicksand'],
+        'open-sans': ['Open Sans']
       }
     },
     colors: {
