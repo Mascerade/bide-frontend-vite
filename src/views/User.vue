@@ -1,33 +1,24 @@
 <template>
-  <div class="w-full h-full lg:flex-col">
-    <div class="w-full flex">
-      <div
-        class="xl:h-screen xl:min-h-[500px] xl:w-56 flex flex-col rounded-tr-lg rounded-br-lg border-r-2 border-gray-50 shadow-xl"
-      >
-        <div class="w-full xl:h-14 rounded-tr-lg bg-green-400"></div>
-        <profile-image
-          class="relative xl:bottom-12 self-center"
-        ></profile-image>
-        <div class="relative xl:bottom-12 xl:pt-2 xl:pl-2">
-          <p class="xl:text-lg">@Username</p>
-          <p class="xl:text-md xl:mt-2">First Name</p>
-          <p class="xl:text-md xl:mt-1">Last Name</p>
-          <p class="xl:text-md xl:mt-1">Description</p>
-        </div>
-        <hr class="relative xl:bottom-12" />
-        <div class="relative flex-grow xl:bottom-12"></div>
-        <hr class="relative xl:bottom-12" />
-        <div class="relative xl:bottom-12 rounded-br-lg">sasdf</div>
-      </div>
-
-      <div class="flex flex-grow xl:p-2">
-        <div class="flex lg:flex-row flex-wrap">
-          <group-card></group-card>
-          <group-card></group-card>
-          <group-card></group-card>
-          <group-card></group-card>
-          <group-card></group-card>
-        </div>
+  <div class="w-full h-full flex flex-row xl:pt-3">
+    <div class="xl:ml-4">
+      <user-profile></user-profile>
+    </div>
+    <div class="flex flex-grow">
+      <div class="flex xl:w-full lg:flex-row flex-wrap">
+        <user-navbar>
+          <template v-slot:pills>
+            <navigation-pill :imgSrc="friendsPillImage">
+              <template v-slot:title>Friends</template>
+            </navigation-pill>
+            <navigation-pill :imgSrc="groupPillImage" class="bg-green-400">
+              <template v-slot:title>Groups</template>
+            </navigation-pill>
+            <navigation-pill :imgSrc="postsPill">
+              <template v-slot:title>Posts</template>
+            </navigation-pill>
+            <!-- <div class="h-full w-2 border-l-2 border-gray-50"></div> -->
+          </template>
+        </user-navbar>
       </div>
     </div>
   </div>
@@ -35,13 +26,27 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ProfileImage from '@/components/user/ProfileImage.vue'
+import UserNavbar from '@/components/user/UserNavbar.vue'
+import UserProfile from '@/components/user/UserProfile.vue'
+import NavigationPill from '@/components/ui/NavigationPill.vue'
 import GroupCard from '@/components/user/GroupCard.vue'
+import friendsPillImage from '@/assets/tree.png'
+import groupPillImage from '@/assets/vines.png'
+import postsPill from '@/assets/icons/posts-pill.png'
 
 export default defineComponent({
   components: {
-    ProfileImage,
+    UserNavbar,
+    UserProfile,
+    NavigationPill,
     GroupCard
+  },
+  setup() {
+    return {
+      friendsPillImage,
+      groupPillImage,
+      postsPill
+    }
   }
 })
 </script>
