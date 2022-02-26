@@ -9,6 +9,7 @@
     "prettier-format": "prettier --config .prettierrc \"src/**/*.{ts,vue}\" --write"
   },
   "dependencies": {
+    "typeface-comfortaa": "^1.1.13",
     "typeface-noto-sans": "^1.1.13",
     "typeface-open-sans": "^1.1.13",
     "typeface-quicksand": "^1.1.13",

@@ -1,6 +1,6 @@
 <template>
   <div class="xl:w-72 xl:p-3">
-    <div class="xl:h-72 flex flex-col shadow-xl rounded-lg">
+    <div class="xl:h-72 flex flex-col shadow-xl rounded-lg bg-white">
       <div class="w-full xl:h-4 bg-green-400 rounded-tr-lg rounded-tl-lg"></div>
       <div class="flex-grow">
         <h1

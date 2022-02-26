@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        quicksand: ['Quicksand']
+        quicksand: ['Quicksand'],
+        comfortaa: ['Comfortaa']
       }
     },
     colors: {
@@ -15,7 +16,8 @@ module.exports = {
       white: colors.white,
       green: colors.green,
       teal: colors.teal,
-      red: colors.red
+      red: colors.red,
+      slate: colors.slate
     }
   }
 }

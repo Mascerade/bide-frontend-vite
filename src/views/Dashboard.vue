@@ -1,26 +1,12 @@
 <template>
-  <div class="h-full">
-    <user-navbar class="xl:mb-3"></user-navbar>
-    <div class="w-full h-[calc(100%-4rem)] flex flex-row xl:pt-3">
-      <div class="h-full xl:ml-4 xl:pr-4 border-r-2 border-gray-100">
-        <user-profile></user-profile>
+  <div class="h-full font-comfortaa bg-slate-100">
+    <user-navbar></user-navbar>
+    <div class="w-full h-[calc(100%-4rem)] flex flex-row">
+      <div class="h-full xl:p-4 bg-slate-200 shadow-md">
+        <user-profile-mini-card></user-profile-mini-card>
       </div>
       <div class="flex flex-col flex-grow">
-        <div class="flex xl:w-full lg:flex-row">
-          <user-pill-navbar>
-            <template v-slot:pills>
-              <!-- <navigation-pill :imgSrc="friendsPillImage">
-                <template v-slot:title>Colleagues</template>
-              </navigation-pill> -->
-              <navigation-pill :imgSrc="groupPillImage" class="bg-green-400">
-                <template v-slot:title>Groups</template>
-              </navigation-pill>
-              <navigation-pill :imgSrc="postsPill">
-                <template v-slot:title>Posts</template>
-              </navigation-pill>
-            </template>
-          </user-pill-navbar>
-        </div>
+        <div class="flex xl:w-full lg:flex-row"></div>
 
         <div v-if="groupData.length > 0" class="flex w-full">
           <div class="flex w-full flex-wrap xl:ml-5">
@@ -54,18 +40,21 @@ import { defineComponent } from 'vue'
 import UserNavbar from '@/components/user/UserNavbar.vue'
 import UserPillNavbar from '@/components/user/UserPillNavbar.vue'
 import UserProfile from '@/components/user/UserProfile.vue'
+import UserProfileMiniCard from '@/components/user/UserProfileMiniCard.vue'
 import NavigationPill from '@/components/ui/NavigationPill.vue'
 import GroupCard from '@/components/user/GroupCard.vue'
 import friendsPillImage from '@/assets/tree.png'
 import groupPillImage from '@/assets/vines.png'
 import postsPill from '@/assets/icons/posts-pill.png'
 import emptyGroups from '@/assets/empty-groups.png'
+import 'typeface-comfortaa'
 
 export default defineComponent({
   components: {
     UserNavbar,
     UserPillNavbar,
     UserProfile,
+    UserProfileMiniCard,
     NavigationPill,
     GroupCard
   },
