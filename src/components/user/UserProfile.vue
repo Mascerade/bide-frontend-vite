@@ -11,15 +11,15 @@
       </h2>
     </div>
     <footer
-      class="w-full flex flex-row justify-between border-t-4 border-gray-100 xl:pl-2 xl:pr-2"
+      class="w-full flex flex-row justify-between border-t-2 border-gray-100"
     >
       <button
-        class="w-1/2 xl:text-lg text-center border-r-2 border-gray-100 text-red-500"
+        class="w-1/2 xl:text-lg text-center border-r-2 border-gray-100 hover:bg-gray-100 text-red-500 rounded-bl-xl xl:pl-2"
       >
         Log Out
       </button>
       <button
-        class="w-1/2 xl:text-lg text-center border-l-2 border-gray-100 text-green-500"
+        class="w-1/2 xl:text-lg text-center border-gray-100 hover:bg-gray-100 text-green-500 rounded-br-xl xl:pr-2"
       >
         Settings
       </button>

@@ -21,13 +21,14 @@
               <!-- <div class="h-full w-2 border-l-2 border-gray-50"></div> -->
             </template>
           </user-pill-navbar>
-          <div class="flex w-full justify-center">
+          <div class="flex w-full">
             <div class="flex flex-wrap">
-              <group-card></group-card>
-              <group-card></group-card>
-              <group-card></group-card>
-              <group-card></group-card>
-              <group-card></group-card>
+              <group-card
+                v-for="group in groupData"
+                :title="group.title"
+                :description="group.description"
+                :key="group.title"
+              ></group-card>
             </div>
           </div>
         </div>
@@ -58,13 +59,15 @@ export default defineComponent({
   setup() {
     const groupData = [
       {
-        title: 'Programming101'
+        title: 'Programming101',
+        description: 'A place to discuss and talk about learning to program!'
       }
     ]
     return {
       friendsPillImage,
       groupPillImage,
-      postsPill
+      postsPill,
+      groupData
     }
   }
 })
