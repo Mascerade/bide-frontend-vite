@@ -1,12 +1,12 @@
 <template>
-  <div class="xl:h-96 xl:w-56 flex flex-col rounded-xl shadow-lg">
+  <div class="xl:h-96 xl:w-64 flex flex-col rounded-xl shadow-lg">
     <div class="bg-green-400 xl:h-14 w-full rounded-t-xl"></div>
     <profile-image class="relative xl:bottom-12 self-center"></profile-image>
     <div class="relative xl:bottom-12 xl:ml-3 flex-grow">
-      <h1 class="xl:text-xl font-semibold text-green-500">@Mascerade</h1>
-      <h2 class="xl:text-lg xl:mt-2">Jason</h2>
-      <h2 class="xl:text-lg xl:mt-1">Acheampong</h2>
-      <h2 class="xl:text-md xl:mt-1">
+      <h1 class="xl:text-2xl font-semibold text-green-500">@Mascerade</h1>
+      <h2 class="xl:text-xl xl:mt-2">Jason</h2>
+      <h2 class="xl:text-xl xl:mt-1">Acheampong</h2>
+      <h2 class="xl:text-lg xl:mt-1">
         Trying to code this profile view and I've redone it 3 times. #lifegoals
       </h2>
     </div>
