@@ -105,7 +105,7 @@ export default defineComponent({
   setup() {
     const groupData = [
       {
-        title: 'Programming101',
+        title: 'Programming 101',
         description: 'A place to discuss and talk about learning to program.'
       },
       {
