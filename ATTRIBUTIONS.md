@@ -34,3 +34,9 @@
 <a href="https://www.flaticon.com/free-icons/paper-plane" title="paper plane icons">Paper plane icons created by Pixel perfect - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/forest" title="forest icons">Forest icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Becris - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/nature" title="nature icons">Nature icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/post" title="post icons">Post icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/recent" title="recent icons">Recent icons created by SBTS2018 - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Gregor Cresnar - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by mattbadal - Flaticon</a>

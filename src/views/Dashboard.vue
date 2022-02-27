@@ -1,10 +1,52 @@
 <template>
-  <div class="h-full font-comfortaa bg-slate-100">
+  <div class="font-comfortaa bg-slate-100">
     <user-navbar></user-navbar>
-    <div class="w-full h-[calc(100%-4rem)] flex flex-row">
-      <div class="h-full xl:p-4 bg-slate-200 shadow-md">
-        <user-profile-mini-card></user-profile-mini-card>
+    <div class="w-full h-[calc(100vh-4rem)] xl:min-h-[566px] flex flex-row">
+      <div class="flex flex-col h-full xl:p-4 bg-slate-200 shadow-md">
+        <div class="flex-grow">
+          <user-profile-mini-card></user-profile-mini-card>
+          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 bg-white rounded-xl">
+            <navigation-side-card-item
+              class="text-green-700"
+              :imgSrc="groupIconGreen"
+              >Group</navigation-side-card-item
+            >
+            <hr />
+            <navigation-side-card-item
+              class="text-slate-700"
+              :imgSrc="yourPostsIcon"
+              >Your Posts</navigation-side-card-item
+            >
+            <hr />
+            <navigation-side-card-item
+              class="text-slate-700"
+              :imgSrc="recentActivityIcon"
+              >Recent Activity</navigation-side-card-item
+            >
+          </div>
+        </div>
+
+        <div>
+          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 bg-white rounded-xl">
+            <navigation-side-card-item
+              class="text-slate-700"
+              :imgSrc="profileIcon"
+              >Profile</navigation-side-card-item
+            >
+            <hr />
+            <navigation-side-card-item
+              class="text-slate-700"
+              :imgSrc="settingsIcon"
+              >Settings</navigation-side-card-item
+            >
+            <hr />
+            <navigation-side-card-item class="text-red-500" :imgSrc="logoutIcon"
+              >Log Out</navigation-side-card-item
+            >
+          </div>
+        </div>
       </div>
+
       <div class="flex flex-col flex-grow">
         <div class="flex xl:w-full lg:flex-row"></div>
 
@@ -38,24 +80,26 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import UserNavbar from '@/components/user/UserNavbar.vue'
-import UserPillNavbar from '@/components/user/UserPillNavbar.vue'
-import UserProfile from '@/components/user/UserProfile.vue'
 import UserProfileMiniCard from '@/components/user/UserProfileMiniCard.vue'
-import NavigationPill from '@/components/ui/NavigationPill.vue'
+import NavigationSideCardItem from '@/components/user/NavigationSideCardItem.vue'
 import GroupCard from '@/components/user/GroupCard.vue'
-import friendsPillImage from '@/assets/tree.png'
-import groupPillImage from '@/assets/vines.png'
-import postsPill from '@/assets/icons/posts-pill.png'
 import emptyGroups from '@/assets/empty-groups.png'
+import groupIcon from '@/assets/icons/group-icon.png'
+import yourPostsIcon from '@/assets/icons/your-posts.png'
+import recentActivityIcon from '@/assets/icons/recent-activity.png'
+import groupIconGreen from '@/assets/icons/group-icon-green.png'
+import yourPostsIconGreen from '@/assets/icons/your-posts-green.png'
+import recentActivityIconGreen from '@/assets/icons/recent-activity-green.png'
+import profileIcon from '@/assets/icons/profile.png'
+import settingsIcon from '@/assets/icons/settings.png'
+import logoutIcon from '@/assets/icons/logout.png'
 import 'typeface-comfortaa'
 
 export default defineComponent({
   components: {
     UserNavbar,
-    UserPillNavbar,
-    UserProfile,
     UserProfileMiniCard,
-    NavigationPill,
+    NavigationSideCardItem,
     GroupCard
   },
   setup() {
@@ -66,11 +110,17 @@ export default defineComponent({
       }
     ]
     return {
-      friendsPillImage,
-      groupPillImage,
-      postsPill,
       groupData,
-      emptyGroups
+      emptyGroups,
+      groupIcon,
+      yourPostsIcon,
+      recentActivityIcon,
+      groupIconGreen,
+      yourPostsIconGreen,
+      recentActivityIconGreen,
+      profileIcon,
+      settingsIcon,
+      logoutIcon
     }
   }
 })

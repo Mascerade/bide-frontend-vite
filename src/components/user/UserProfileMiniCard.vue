@@ -5,7 +5,7 @@
     <div class="flex flex-row xl:mb-3 xl:mt-3 xl:ml-2 xl:mr-2">
       <div class="flex items-center justify-center rounded-full">
         <img
-          class="xl:h-10 xl:w-10 rounded-full shadow-lg"
+          class="xl:h-10 xl:w-10 rounded-full"
           src="../../assets/icons/default-profile-img-2.png"
           alt=""
         />
@@ -17,7 +17,7 @@
         </h2>
       </div>
     </div>
-    <footer
+    <!-- <footer
       class="w-full flex flex-row justify-between border-t-2 border-gray-100"
     >
       <button
@@ -30,7 +30,7 @@
       >
         Settings
       </button>
-    </footer>
+    </footer> -->
   </div>
 </template>
 
