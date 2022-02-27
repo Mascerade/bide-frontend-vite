@@ -5,17 +5,11 @@
       <div class="flex flex-col h-full xl:p-4 bg-slate-200 shadow-md">
         <div class="flex-grow">
           <user-profile-mini-card></user-profile-mini-card>
-          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 bg-white rounded-xl">
+          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 xl:pr-4 bg-white rounded-xl">
             <navigation-side-card-item
               class="text-green-700"
               :imgSrc="groupIconGreen"
-              >Group</navigation-side-card-item
-            >
-            <hr />
-            <navigation-side-card-item
-              class="text-slate-700"
-              :imgSrc="yourPostsIcon"
-              >Your Posts</navigation-side-card-item
+              >Groups</navigation-side-card-item
             >
             <hr />
             <navigation-side-card-item
@@ -23,11 +17,17 @@
               :imgSrc="recentActivityIcon"
               >Recent Activity</navigation-side-card-item
             >
+            <hr />
+            <navigation-side-card-item
+              class="text-slate-700"
+              :imgSrc="yourPostsIcon"
+              >Your Posts</navigation-side-card-item
+            >
           </div>
         </div>
 
         <div>
-          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 bg-white rounded-xl">
+          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 xl:pr-4 bg-white rounded-xl">
             <navigation-side-card-item
               class="text-slate-700"
               :imgSrc="profileIcon"
@@ -105,8 +105,13 @@ export default defineComponent({
   setup() {
     const groupData = [
       {
-        title: 'Programming101sdafsdfsdf',
-        description: 'A place to discuss and talk about learning to program!'
+        title: 'Programming101',
+        description: 'A place to discuss and talk about learning to program.'
+      },
+      {
+        title: 'Sociology Learning Space',
+        description:
+          'Talk about all things society from material conditions to culture and how they are all interconnected!'
       }
     ]
     return {
