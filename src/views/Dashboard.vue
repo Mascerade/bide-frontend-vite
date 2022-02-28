@@ -5,9 +5,9 @@
       <div class="flex flex-col h-full xl:p-4 bg-slate-200 shadow-md">
         <div class="flex-grow">
           <user-profile-mini-card></user-profile-mini-card>
-          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 xl:pr-4 bg-white rounded-xl">
+          <div class="xl:w-[270px] xl:mt-7 bg-white rounded-xl">
             <navigation-side-card-item
-              class="text-green-700"
+              class="rounded-t-lg text-green-700"
               :imgSrc="groupIconGreen"
               >Groups</navigation-side-card-item
             >
@@ -19,7 +19,7 @@
             >
             <hr />
             <navigation-side-card-item
-              class="text-slate-700"
+              class="rounded-b-lg text-slate-700"
               :imgSrc="yourPostsIcon"
               >Your Posts</navigation-side-card-item
             >
@@ -27,9 +27,9 @@
         </div>
 
         <div>
-          <div class="xl:w-[270px] xl:mt-7 xl:pl-4 xl:pr-4 bg-white rounded-xl">
+          <div class="xl:w-[270px] xl:mt-7 bg-white rounded-xl">
             <navigation-side-card-item
-              class="text-slate-700"
+              class="rounded-t-lg text-slate-700"
               :imgSrc="profileIcon"
               >Profile</navigation-side-card-item
             >
@@ -40,7 +40,9 @@
               >Settings</navigation-side-card-item
             >
             <hr />
-            <navigation-side-card-item class="text-red-500" :imgSrc="logoutIcon"
+            <navigation-side-card-item
+              class="rounded-b-lg text-red-500"
+              :imgSrc="logoutIcon"
               >Log Out</navigation-side-card-item
             >
           </div>
