@@ -14,11 +14,7 @@
         :placeholder="'Username'"
         v-model:inputBind="username"
       ></form-input>
-      <form-input
-        :placeholder="'Email'"
-        v-model:inputBind="email"
-        disabled
-      ></form-input>
+      <form-input :placeholder="'Email'" v-model:inputBind="email"></form-input>
       <form-input
         :placeholder="'Password'"
         v-model:inputBind="password"
@@ -67,6 +63,11 @@ export default defineComponent({
       email,
       password,
       forest3
+    }
+  },
+  methods: {
+    submit() {
+      console.log('button pressed.')
     }
   }
 })

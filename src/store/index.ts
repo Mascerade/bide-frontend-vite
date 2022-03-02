@@ -1,9 +1,11 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
-import { User } from '../types/databaseModels'
+import { Group, Post, User } from '../types/databaseModels'
 
 type State = {
   user: User | null
+  groups: String[]
+  userPosts: Post[]
   displayProfileSideNav: boolean
 }
 
@@ -12,6 +14,8 @@ export const key: InjectionKey<Store<State>> = Symbol('store')
 export const store = createStore<State>({
   state: {
     user: null,
+    groups: [],
+    userPosts: [],
     displayProfileSideNav: true
   },
   mutations: {
