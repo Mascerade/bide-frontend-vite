@@ -1,4 +1,9 @@
 <template>
+  <div class="w-11/12 text-red-500">
+    <p v-for="error in errors" :key="error">
+      {{ error }}
+    </p>
+  </div>
   <input
     type="text"
     :placeholder="placeholder"
@@ -11,8 +16,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-//       style="background-color: #f4f8f7"
-
 export default defineComponent({
   props: {
     placeholder: {
@@ -20,6 +23,10 @@ export default defineComponent({
     },
     inputBind: {
       type: String,
+      required: true
+    },
+    errors: {
+      type: Array,
       required: true
     }
   },

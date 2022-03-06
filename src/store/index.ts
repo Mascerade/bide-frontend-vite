@@ -21,6 +21,12 @@ export const store = createStore<State>({
   mutations: {
     toggleProfileSideNav(state) {
       state.displayProfileSideNav = !state.displayProfileSideNav
+    },
+    changeUser(state, user: User) {
+      state.user = user
+    },
+    changeUsername(state, name: String) {
+      if (state.user) state.user.firstName = name
     }
   }
 })

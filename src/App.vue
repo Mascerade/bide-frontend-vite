@@ -4,10 +4,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useStore } from './store'
 import 'typeface-quicksand'
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  setup() {
+    const store = useStore()
+  }
 })
 </script>
 

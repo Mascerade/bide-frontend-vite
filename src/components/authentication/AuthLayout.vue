@@ -16,9 +16,7 @@
           Or Sign-In Manually
         </h2>
 
-        <slot name="inputs"></slot>
-
-        <slot name="button"></slot>
+        <slot name="form"></slot>
 
         <router-link
           class="lg:mt-4 lg:text-lg xl:text-xl underline text-gray-700"
