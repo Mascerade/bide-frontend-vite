@@ -4,8 +4,6 @@ import { Group, Post, User } from '../types/databaseModels'
 
 type State = {
   user: User | null
-  groups: String[]
-  userPosts: Post[]
   displayProfileSideNav: boolean
 }
 
@@ -14,8 +12,6 @@ export const key: InjectionKey<Store<State>> = Symbol('store')
 export const store = createStore<State>({
   state: {
     user: null,
-    groups: [],
-    userPosts: [],
     displayProfileSideNav: true
   },
   mutations: {
@@ -24,9 +20,6 @@ export const store = createStore<State>({
     },
     changeUser(state, user: User) {
       state.user = user
-    },
-    changeUsername(state, name: String) {
-      if (state.user) state.user.firstName = name
     }
   }
 })
