@@ -59,6 +59,9 @@ import GeneralButton from '@/components/ui/GeneralButton.vue'
 import forest3 from '@/assets/forest-3.png'
 import { SERVER } from '@/constants/env'
 import axios, { AxiosError } from 'axios'
+import { createUser } from '../api/user'
+import { CreateUser, User } from '../types/databaseModels'
+import router from '../router'
 
 export default defineComponent({
   components: {
@@ -134,6 +137,21 @@ export default defineComponent({
       const validation = await this.validateForm()
       this.usernameErrors = validation.usernameErrors
       this.emailErrors = validation.userIdErrors
+
+      if (this.usernameErrors.length == 0 && this.emailErrors.length == 0) {
+        const userToCreate: CreateUser = {
+          id: this.email,
+          username: this.username,
+          firstName: this.firstName,
+          lastName: this.lastName
+        }
+        const result = await createUser(userToCreate)
+        if (result == true) {
+          router.push(`/dashboard/${this.username}`)
+        } else {
+          console.log('Error creating the user.')
+        }
+      }
     }
   }
 })

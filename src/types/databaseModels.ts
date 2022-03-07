@@ -3,9 +3,9 @@ export type User = {
   username: String
   firstName: String | null
   lastName: String | null
-  posts: Post[]
-  userGroups: GroupUser[]
-  groupGeneralTokens: GeneralTokenGroupUser[]
+  posts?: Post[]
+  userGroups?: GroupUser[]
+  groupGeneralTokens?: GeneralTokenGroupUser[]
 }
 
 export type CreateUser = Omit<
@@ -28,16 +28,16 @@ export type Group = {
   id: number
   title: String
   description: String
-  posts: Post[]
-  groupUsers: GroupUser[]
-  userGeneralTokens: GeneralTokenGroupUser
+  posts?: Post[]
+  groupUsers?: GroupUser[]
+  userGeneralTokens?: GeneralTokenGroupUser
 }
 
 export type GeneralToken = {
   id: String
   title: String
   description: String
-  groupUsers: GeneralTokenGroupUser[]
+  groupUsers?: GeneralTokenGroupUser[]
 }
 
 export type GroupUser = {
