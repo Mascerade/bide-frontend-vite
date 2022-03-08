@@ -20,6 +20,9 @@ export const store = createStore<State>({
     },
     changeUser(state, user: User) {
       state.user = user
+    },
+    logOut(state) {
+      state.user = null
     }
   }
 })

@@ -21,7 +21,7 @@ export const getUser = async function (
   password: String,
   id?: number,
   username?: String
-) {
+): Promise<boolean> {
   let dataToSend: any = {}
   dataToSend.password = password
   if (id != null) {
@@ -35,10 +35,17 @@ export const getUser = async function (
     .catch((e: AxiosError) => {
       return e.response
     })
-  if (res?.status == 200) {
-    store.commit('changeUser', res.data.user)
-    return true
-  } else if (res?.status == 400) {
+  if (res) {
+    if (res.status == 200) {
+      store.commit('changeUser', res.data.user)
+      return true
+    } else if (res.status < 500) {
+      return false
+    } else {
+      console.log(res.status)
+      return false
+    }
+  } else {
     return false
   }
 }

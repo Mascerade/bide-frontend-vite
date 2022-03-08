@@ -4,7 +4,11 @@
     <div class="w-full h-[calc(100vh-4rem)] xl:min-h-[566px] flex flex-row">
       <div class="flex flex-col h-full xl:p-4 bg-slate-200 shadow-md">
         <div class="flex-grow">
-          <user-profile-mini-card></user-profile-mini-card>
+          <user-profile-mini-card
+            :username="user.username"
+            :firstName="user.firstName"
+            :lastName="lastName"
+          ></user-profile-mini-card>
           <div class="xl:w-[270px] xl:mt-7 bg-white rounded-xl">
             <navigation-side-card-item
               class="rounded-t-lg text-green-700"
@@ -43,6 +47,7 @@
             <navigation-side-card-item
               class="rounded-b-lg text-red-500"
               :imgSrc="logoutIcon"
+              @click="logOut"
               >Log Out</navigation-side-card-item
             >
           </div>
@@ -52,13 +57,13 @@
       <div class="flex flex-col flex-grow">
         <div class="flex xl:w-full lg:flex-row"></div>
 
-        <div v-if="groupData.length > 0" class="flex w-full">
+        <div v-if="userGroups?.length > 0" class="flex w-full">
           <div class="flex w-full flex-wrap xl:ml-5">
             <group-card
-              v-for="group in groupData"
-              :title="group.title"
-              :description="group.description"
-              :key="group.title"
+              v-for="userGroup in userGroups"
+              :title="userGroup.group.title"
+              :description="userGroup.group.description"
+              :key="userGroup.group.title"
             ></group-card>
           </div>
         </div>
@@ -80,7 +85,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import UserNavbar from '@/components/user/UserNavbar.vue'
 import UserProfileMiniCard from '@/components/user/UserProfileMiniCard.vue'
 import NavigationSideCardItem from '@/components/user/NavigationSideCardItem.vue'
@@ -96,6 +101,8 @@ import profileIcon from '@/assets/icons/profile.png'
 import settingsIcon from '@/assets/icons/settings.png'
 import logoutIcon from '@/assets/icons/logout.png'
 import 'typeface-comfortaa'
+import { useStore } from '@/store'
+import router from '@/router'
 
 export default defineComponent({
   components: {
@@ -105,19 +112,14 @@ export default defineComponent({
     GroupCard
   },
   setup() {
-    const groupData = [
-      {
-        title: 'Programming 101',
-        description: 'A place to discuss and talk about learning to program.'
-      },
-      {
-        title: 'Sociology Learning Space',
-        description:
-          'Talk about all things society from material conditions to culture and how they are all interconnected!'
-      }
-    ]
+    const store = useStore()
+    const user = computed(() => store.state.user)
+    const userGroups = computed(() => store.state.user?.userGroups)
+    console.log(userGroups)
     return {
-      groupData,
+      store,
+      user,
+      userGroups,
       emptyGroups,
       groupIcon,
       yourPostsIcon,
@@ -128,6 +130,12 @@ export default defineComponent({
       profileIcon,
       settingsIcon,
       logoutIcon
+    }
+  },
+  methods: {
+    logOut() {
+      this.store.commit('logOut')
+      router.push('/signin')
     }
   }
 })

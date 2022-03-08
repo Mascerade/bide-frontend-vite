@@ -11,9 +11,11 @@
         />
       </div>
       <div class="xl:ml-3">
-        <h2 class="xl:text-md xl:mt-2 font-bold">Jason Acheampong</h2>
+        <h2 class="xl:text-md xl:mt-2 font-bold">
+          {{ firstName }} {{ lastName }}
+        </h2>
         <h2 class="xl:text-md xl:mt-2 text-center text-slate-900">
-          @Mascerade
+          @{{ username }}
         </h2>
       </div>
     </div>
@@ -39,6 +41,20 @@ import { defineComponent } from 'vue'
 import ProfileImage from './ProfileImage.vue'
 
 export default defineComponent({
+  props: {
+    username: {
+      type: String,
+      required: true
+    },
+    firstName: {
+      type: String,
+      required: true
+    },
+    lastName: {
+      type: String,
+      required: true
+    }
+  },
   components: {
     ProfileImage
   }
