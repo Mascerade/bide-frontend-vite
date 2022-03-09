@@ -1,5 +1,5 @@
 <template>
-  <div class="font-comfortaa bg-slate-100">
+  <div v-if="checkAuth" class="font-comfortaa bg-slate-100">
     <user-navbar></user-navbar>
     <div class="w-full h-[calc(100vh-4rem)] xl:min-h-[566px] flex flex-row">
       <div class="flex flex-col h-full xl:p-4 bg-slate-200 shadow-md">
@@ -82,10 +82,12 @@
       </div>
     </div>
   </div>
+  <unauthenticated-error v-else />
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
+import UnauthenticatedError from '@/components/navigation/UnauthenticatedError.vue'
 import UserNavbar from '@/components/user/UserNavbar.vue'
 import UserProfileMiniCard from '@/components/user/UserProfileMiniCard.vue'
 import NavigationSideCardItem from '@/components/user/NavigationSideCardItem.vue'
@@ -101,22 +103,28 @@ import profileIcon from '@/assets/icons/profile.png'
 import settingsIcon from '@/assets/icons/settings.png'
 import logoutIcon from '@/assets/icons/logout.png'
 import 'typeface-comfortaa'
-import { useStore } from '@/store'
+import { useStore } from '../store'
 import router from '@/router'
+import { useRoute } from 'vue-router'
 
 export default defineComponent({
   components: {
+    UnauthenticatedError,
     UserNavbar,
     UserProfileMiniCard,
     NavigationSideCardItem,
-    GroupCard
+    GroupCard,
+    UnauthenticatedError
   },
   setup() {
     const store = useStore()
+    const route = useRoute()
     const user = computed(() => store.state.user)
+    const checkAuth = route.params.username == store.state.user?.username
     const userGroups = computed(() => store.state.user?.userGroups)
     console.log(userGroups)
     return {
+      checkAuth,
       store,
       user,
       userGroups,
