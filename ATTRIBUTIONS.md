@@ -41,3 +41,4 @@
 <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Pixel perfect - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by mattbadal - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/page-not-found" title="page not found icons">Page not found icons created by Muhammad Ali - Flaticon</a>

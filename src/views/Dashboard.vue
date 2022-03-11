@@ -87,7 +87,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import UnauthenticatedError from '@/components/navigation/UnauthenticatedError.vue'
+import UnauthenticatedError from '@/components/error/UnauthenticatedError.vue'
 import UserNavbar from '@/components/user/UserNavbar.vue'
 import UserProfileMiniCard from '@/components/user/UserProfileMiniCard.vue'
 import NavigationSideCardItem from '@/components/user/NavigationSideCardItem.vue'
@@ -113,8 +113,7 @@ export default defineComponent({
     UserNavbar,
     UserProfileMiniCard,
     NavigationSideCardItem,
-    GroupCard,
-    UnauthenticatedError
+    GroupCard
   },
   setup() {
     const store = useStore()

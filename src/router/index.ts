@@ -3,6 +3,7 @@ import Landing from '@/views/Landing.vue'
 import SignUp from '@/views/SignUp.vue'
 import SignIn from '@/views/SignIn.vue'
 import Dashboard from '@/views/Dashboard.vue'
+import Group from '@/views/Group.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/dashboard/:username',
     name: 'Dashboard',
     component: Dashboard
+  },
+  {
+    path: '/group/:groupName',
+    name: 'Group',
+    component: Group
   }
 ]
 
