@@ -7,7 +7,7 @@
           <user-profile-mini-card
             :username="user.username"
             :firstName="user.firstName"
-            :lastName="lastName"
+            :lastName="user.lastName"
           ></user-profile-mini-card>
           <div class="xl:w-[270px] xl:mt-7 bg-white rounded-xl">
             <navigation-side-card-item
@@ -61,9 +61,9 @@
           <div class="flex w-full flex-wrap xl:ml-5">
             <group-card
               v-for="userGroup in userGroups"
-              :title="userGroup.group.title"
+              :name="userGroup.group.name"
               :description="userGroup.group.description"
-              :key="userGroup.group.title"
+              :key="userGroup.group.name"
             ></group-card>
           </div>
         </div>

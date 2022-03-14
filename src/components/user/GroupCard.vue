@@ -8,7 +8,7 @@
           <h1
             class="xl:text-xl xl:ml-1 xl:mr-1 xl:pt-1 xl:pb-1 font-semibold break-words text-center"
           >
-            {{ title }}
+            {{ name }}
           </h1>
           <hr class="mr-2 ml-2" />
           <div class="flex flex-grow items-center">
@@ -31,7 +31,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    title: {
+    name: {
       type: String,
       required: true
     },
