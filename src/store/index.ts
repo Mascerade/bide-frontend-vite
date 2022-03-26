@@ -1,6 +1,6 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
-import { Group, Post, User } from '../types/databaseModels'
+import { Group, Post, User } from '../types/database-models'
 
 type State = {
   user: User | null

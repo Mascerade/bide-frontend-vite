@@ -1,5 +1,7 @@
 <template>
-  <div v-if="group"></div>
+  <div v-if="group">
+    <navbar></navbar>
+  </div>
   <not-found-error v-else></not-found-error>
 </template>
 
@@ -9,10 +11,12 @@ import { useRoute } from 'vue-router'
 import { useStore } from '../store'
 import { getGroup } from '../api/group'
 import NotFoundError from '../components/error/NotFoundError.vue'
+import Navbar from '@/components/ui/Navbar.vue'
 
 export default defineComponent({
   components: {
-    NotFoundError
+    NotFoundError,
+    Navbar
   },
   setup() {
     onMounted(async () => {

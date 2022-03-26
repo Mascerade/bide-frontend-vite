@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios'
 import { store } from '../store'
 import { SERVER } from '@/constants/env'
-import { Group } from '../types/databaseModels'
+import { Group } from '../types/database-models'
 
 export const getGroup = async function (groupId: number): Promise<boolean> {
   const res = await axios

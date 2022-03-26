@@ -60,7 +60,7 @@ import forest3 from '@/assets/forest-3.png'
 import { SERVER } from '@/constants/env'
 import axios, { AxiosError } from 'axios'
 import { createUser } from '../api/user'
-import { CreateUser, User } from '../types/databaseModels'
+import { CreateUser, User } from '../types/database-models'
 import router from '../router'
 
 export default defineComponent({

@@ -78,7 +78,7 @@ export default defineComponent({
       }
       const res = await getUser('', this.email, undefined)
       if (res) {
-        router.push(`/dashboard/${this.user?.username}`)
+        router.push(`/dashboard`)
       } else {
         this.emailErrors.push('User could not be found.')
       }

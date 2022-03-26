@@ -4,6 +4,8 @@ import SignUp from '@/views/SignUp.vue'
 import SignIn from '@/views/SignIn.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Group from '@/views/Group.vue'
+import { store } from '../store'
+import { loadInitialUser } from '../api/user'
 
 const routes = [
   {
@@ -22,8 +24,9 @@ const routes = [
     component: SignIn
   },
   {
-    path: '/dashboard/:username',
+    path: '/dashboard',
     name: 'Dashboard',
+    meta: { authentication: true },
     component: Dashboard
   },
   {
@@ -37,5 +40,28 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
+router.beforeEach(async (to, from, next) => {
+  if (to.meta.authentication || to.name == 'Sign In') {
+    if (!store.state.user) {
+      const user = await loadInitialUser()
+      if (user) {
+        store.commit('changeUser', user)
+        if (to.name == 'Sign In') {
+          next({ name: 'Dashboard' })
+        }
+        next()
+      } else {
+        next({ name: 'Sign In' })
+      }
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
+
+router.beforeResolve(async (to, from) => {})
 
 export default router
