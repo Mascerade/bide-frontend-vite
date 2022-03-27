@@ -1,8 +1,8 @@
 import axios, { AxiosError } from 'axios'
-import { CreateUser } from '../types/database-models'
-import { store } from '../store'
+import { CreateUser } from '@/types/database-models'
+import { store } from '@/store'
 import { SERVER } from '@/constants/env'
-import { User } from '../types/database-models'
+import { User } from '@/types/database-models'
 
 export const createUser = async function (user: CreateUser) {
   const res = await axios
