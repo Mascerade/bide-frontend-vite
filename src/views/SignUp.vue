@@ -147,7 +147,7 @@ export default defineComponent({
         }
         const result = await createUser(userToCreate)
         if (result == true) {
-          router.push(`/dashboard/${this.username}`)
+          router.push(`/dashboard`)
         } else {
           console.log('Error creating the user.')
         }

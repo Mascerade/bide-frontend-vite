@@ -6,7 +6,7 @@ import { User } from '../types/database-models'
 
 export const createUser = async function (user: CreateUser) {
   const res = await axios
-    .post(`${SERVER}/user`, user)
+    .post(`${SERVER}/user`, user, { withCredentials: true })
     .catch((e: AxiosError) => {
       return e.response
     })

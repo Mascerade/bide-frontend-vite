@@ -42,6 +42,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+  console.log('beforeEach called')
   if (to.meta.authentication || to.name == 'Sign In') {
     if (!store.state.user) {
       const user = await loadInitialUser()
@@ -49,12 +50,25 @@ router.beforeEach(async (to, from, next) => {
         store.commit('changeUser', user)
         if (to.name == 'Sign In') {
           next({ name: 'Dashboard' })
+          return
         }
+
+        console.log('User found, navigating as usual')
         next()
       } else {
+        if (to.name == 'Sign In') {
+          console.log('going to sign-in because user not found from cookie')
+          next()
+          return
+        }
         next({ name: 'Sign In' })
       }
     } else {
+      if (to.name == 'Sign In') {
+        console.log('User exists in store and navigating to dashboard')
+        next({ name: 'Dashboard' })
+        return
+      }
       next()
     }
   } else {
