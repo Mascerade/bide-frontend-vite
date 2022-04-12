@@ -47,7 +47,7 @@
             <navigation-side-card-item
               class="rounded-b-lg text-red-500"
               :imgSrc="logoutIcon"
-              @click="logOut"
+              @click="logout"
               >Log Out</navigation-side-card-item
             >
           </div>
@@ -91,7 +91,7 @@ import Navbar from '@/components/ui/Navbar.vue'
 import UserProfileMiniCard from '@/components/user/UserProfileMiniCard.vue'
 import NavigationSideCardItem from '@/components/user/NavigationSideCardItem.vue'
 import GroupCard from '@/components/user/GroupCard.vue'
-import { loadInitialUser } from '../api/user'
+import { loadInitialUser, logout } from '../api/user'
 import emptyGroups from '@/assets/empty-groups.png'
 import groupIcon from '@/assets/icons/group-icon.png'
 import yourPostsIcon from '@/assets/icons/your-posts.png'
@@ -137,9 +137,15 @@ export default defineComponent({
     }
   },
   methods: {
-    logOut() {
-      this.store.commit('logOut')
-      router.push('/signin')
+    logout() {
+      logout().then((success) => {
+        if (success) {
+          this.store.commit('logOut')
+          router.push('/signin')
+        } else {
+          console.log('Error logging out')
+        }
+      })
     }
   }
 })

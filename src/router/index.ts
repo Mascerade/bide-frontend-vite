@@ -46,13 +46,13 @@ router.beforeEach(async (to, from, next) => {
   if (to.meta.authentication || to.name == 'Sign In') {
     if (!store.state.user) {
       const user = await loadInitialUser()
+      console.log(user)
       if (user) {
         store.commit('changeUser', user)
         if (to.name == 'Sign In') {
           next({ name: 'Dashboard' })
           return
         }
-
         console.log('User found, navigating as usual')
         next()
       } else {

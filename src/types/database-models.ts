@@ -1,5 +1,6 @@
 export type User = {
-  id: String
+  id: number
+  email: String
   username: String
   firstName: String | null
   lastName: String | null
@@ -10,7 +11,7 @@ export type User = {
 
 export type CreateUser = Omit<
   User,
-  'posts' | 'userGroups' | 'groupGeneralTokens'
+  'id' | 'posts' | 'userGroups' | 'groupGeneralTokens'
 >
 
 export type Post = {
@@ -19,7 +20,7 @@ export type Post = {
   title: String
   conent: String
   author: User
-  authorId: String
+  authorId: User['id']
   group: Group
   groupId: number
 }
@@ -43,7 +44,7 @@ export type GeneralToken = {
 export type GroupUser = {
   id: number
   user: User
-  userId: String
+  userId: User['id']
   group: Group
   groupId: number
   dateJoined: String
@@ -52,7 +53,7 @@ export type GroupUser = {
 export type GeneralTokenGroupUser = {
   id: number
   user: User
-  userId: String
+  userId: User['id']
   group: Group
   groupId: number
   generalToken: GeneralToken

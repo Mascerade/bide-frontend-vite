@@ -43,7 +43,7 @@ import AuthLayout from '@/components/authentication/AuthLayout.vue'
 import FormInput from '@/components/authentication/FormInput.vue'
 import GeneralButton from '@/components/ui/GeneralButton.vue'
 import forest4 from '@/assets/forest-4.png'
-import { getUser } from '@/api/user'
+import { login } from '@/api/user'
 import router from '@/router'
 import { useStore } from '../store'
 
@@ -76,7 +76,7 @@ export default defineComponent({
         this.emailErrors.push('Email cannot be left blank.')
         return
       }
-      const res = await getUser('', this.email, undefined)
+      const res = await login('', this.email, undefined)
       if (res) {
         router.push(`/dashboard`)
       } else {

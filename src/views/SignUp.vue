@@ -60,7 +60,7 @@ import forest3 from '@/assets/forest-3.png'
 import { SERVER } from '@/constants/env'
 import axios, { AxiosError } from 'axios'
 import { createUser } from '../api/user'
-import { CreateUser, User } from '../types/database-models'
+import { CreateUser } from '../types/database-models'
 import router from '../router'
 
 export default defineComponent({
@@ -97,13 +97,13 @@ export default defineComponent({
   methods: {
     async validateForm(): Promise<{
       statusCode: number
-      userIdErrors: Array<string>
+      emailErrors: Array<string>
       usernameErrors: Array<string>
     }> {
       const res = await axios
-        .get(`${SERVER}/validate-new-user`, {
+        .get(`${SERVER}/user/validate-new-user`, {
           params: {
-            userId: this.email,
+            email: this.email,
             username: this.username
           }
         })
@@ -136,11 +136,11 @@ export default defineComponent({
       // Validate the form from the server and display the results
       const validation = await this.validateForm()
       this.usernameErrors = validation.usernameErrors
-      this.emailErrors = validation.userIdErrors
+      this.emailErrors = validation.emailErrors
 
       if (this.usernameErrors.length == 0 && this.emailErrors.length == 0) {
         const userToCreate: CreateUser = {
-          id: this.email,
+          email: this.email,
           username: this.username,
           firstName: this.firstName,
           lastName: this.lastName

@@ -20,7 +20,7 @@ export const createUser = async function (user: CreateUser) {
 
 export const checkUserCookie = async (): Promise<boolean> => {
   const res = await axios
-    .get(`${SERVER}/user-cookie-check`, { withCredentials: true })
+    .get(`${SERVER}/user/cookie-check`, { withCredentials: true })
     .catch((e: AxiosError) => {
       return e.response
     })
@@ -36,9 +36,9 @@ export const checkUserCookie = async (): Promise<boolean> => {
   }
 }
 
-export const loadInitialUser = async function (): Promise<User | null> {
+export const loadInitialUser = async (): Promise<User | null> => {
   const res = await axios
-    .get(`${SERVER}/user-initial`, { withCredentials: true })
+    .get(`${SERVER}/user/initial-load`, { withCredentials: true })
     .catch((e: AxiosError) => {
       return e.response
     })
@@ -54,21 +54,25 @@ export const loadInitialUser = async function (): Promise<User | null> {
   }
 }
 
-export const getUser = async function (
+export const login = async (
   password: String,
-  id?: number,
-  username?: String
-): Promise<boolean> {
+  email?: User['email'],
+  username?: User['username']
+): Promise<boolean> => {
+  console.log(email)
   let dataToSend: any = {}
   dataToSend.password = password
-  if (id != null) {
-    dataToSend.id = id
+  if (email != null) {
+    dataToSend.email = email
   }
   if (username != null) {
     dataToSend.username = username
   }
   const res = await axios
-    .get(`${SERVER}/user-login/${dataToSend.id}`, { withCredentials: true })
+    .get(`${SERVER}/user/login`, {
+      params: { email: dataToSend.email },
+      withCredentials: true
+    })
     .catch((e: AxiosError) => {
       return e.response
     })
@@ -80,6 +84,24 @@ export const getUser = async function (
       return false
     } else {
       console.log(res.status)
+      return false
+    }
+  } else {
+    return false
+  }
+}
+
+export const logout = async (): Promise<boolean> => {
+  const res = await axios
+    .get(`${SERVER}/user/logout`, { withCredentials: true })
+    .catch((e: AxiosError) => {
+      return e.response
+    })
+  if (res) {
+    if (res.status == 200) {
+      return true
+    } else {
+      console.log(res)
       return false
     }
   } else {
