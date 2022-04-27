@@ -127,9 +127,16 @@ export default defineComponent({
       if (this.email == '') {
         this.emailErrors.push('Email cannot be left blank.')
       }
+      if (this.password == '') {
+        this.passwordErrors.push('Password cannot be left blank.')
+      }
 
       // If either have been left blank, don't pursue server validation
-      if (this.usernameErrors.length > 0 || this.emailErrors.length > 0) {
+      if (
+        this.usernameErrors.length > 0 ||
+        this.emailErrors.length > 0 ||
+        this.passwordErrors.length > 0
+      ) {
         return
       }
 
@@ -141,6 +148,7 @@ export default defineComponent({
       if (this.usernameErrors.length == 0 && this.emailErrors.length == 0) {
         const userToCreate: CreateUser = {
           email: this.email,
+          password: this.password,
           username: this.username,
           firstName: this.firstName,
           lastName: this.lastName

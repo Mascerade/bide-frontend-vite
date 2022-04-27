@@ -55,22 +55,12 @@ export const loadInitialUser = async (): Promise<User | null> => {
 }
 
 export const login = async (
-  password: String,
-  email?: User['email'],
-  username?: User['username']
-): Promise<boolean> => {
-  console.log(email)
-  let dataToSend: any = {}
-  dataToSend.password = password
-  if (email != null) {
-    dataToSend.email = email
-  }
-  if (username != null) {
-    dataToSend.username = username
-  }
+  email: User['email'],
+  password: User['password']
+): Promise<{ success: boolean; message: string }> => {
   const res = await axios
     .get(`${SERVER}/user/login`, {
-      params: { email: dataToSend.email },
+      params: { email, password },
       withCredentials: true
     })
     .catch((e: AxiosError) => {
@@ -79,15 +69,15 @@ export const login = async (
   if (res) {
     if (res.status == 200) {
       store.commit('changeUser', res.data.user)
-      return true
-    } else if (res.status < 500) {
-      return false
+      return { success: true, message: 'Successfully found user.' }
+    } else if (res.status == 401) {
+      return { success: false, message: 'Invalid password.' }
     } else {
       console.log(res.status)
-      return false
+      return { success: false, message: 'Unknown response from server.' }
     }
   } else {
-    return false
+    return { success: false, message: 'Error with response.' }
   }
 }
 

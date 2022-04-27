@@ -74,13 +74,21 @@ export default defineComponent({
       this.emailErrors = []
       if (this.email == '') {
         this.emailErrors.push('Email cannot be left blank.')
+      }
+
+      if (this.password == '') {
+        this.passwordErrors.push('Password cannot be left blank.')
+      }
+
+      if (this.emailErrors.length > 0 || this.passwordErrors.length > 0) {
         return
       }
-      const res = await login('', this.email, undefined)
-      if (res) {
+
+      const res = await login(this.email, this.password)
+      if (res.success) {
         router.push(`/dashboard`)
       } else {
-        this.emailErrors.push('User could not be found.')
+        this.emailErrors.push(res.message)
       }
     }
   }
