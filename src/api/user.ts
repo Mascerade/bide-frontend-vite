@@ -71,7 +71,9 @@ export const login = async (
       store.commit('changeUser', res.data.user)
       return { success: true, message: 'Successfully found user.' }
     } else if (res.status == 401) {
-      return { success: false, message: 'Invalid password.' }
+      return { success: false, message: 'Incorrect password.' }
+    } else if (res.status == 404) {
+      return { success: false, message: 'User could not be found.' }
     } else {
       console.log(res.status)
       return { success: false, message: 'Unknown response from server.' }

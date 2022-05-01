@@ -21,9 +21,10 @@ export default defineComponent({
   setup() {
     onMounted(async () => {
       const route = useRoute()
-      const res = await getGroup(parseInt(route.params.groupName as string))
+      const res = await getGroup(route.params.groupName as string)
       console.log(res)
     })
+
     const store = useStore()
     const group = computed(() => store.state.groupViewing)
 

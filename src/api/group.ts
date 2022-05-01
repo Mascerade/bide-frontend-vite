@@ -3,9 +3,9 @@ import { store } from '../store'
 import { SERVER } from '@/constants/env'
 import { Group } from '../types/database-models'
 
-export const getGroup = async function (groupId: number): Promise<boolean> {
+export const getGroup = async function (groupName: string): Promise<boolean> {
   const res = await axios
-    .get(`${SERVER}/group/${groupId}`)
+    .get(`${SERVER}/group/${groupName}`)
     .catch((e: AxiosError) => {
       return e.response
     })
