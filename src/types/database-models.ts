@@ -29,6 +29,7 @@ export type Post = {
 export type Group = {
   id: number
   name: String
+  title: String
   description: String
   posts?: Post[]
   groupUsers?: GroupUser[]

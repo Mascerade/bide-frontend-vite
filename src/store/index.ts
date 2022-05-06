@@ -4,7 +4,7 @@ import { Group, Post, User } from '../types/database-models'
 
 type State = {
   user: User | null
-  groupViewing: Group | null
+  currentGroupViewing: Group | null
   displayProfileSideNav: boolean
 }
 
@@ -13,7 +13,7 @@ export const key: InjectionKey<Store<State>> = Symbol('store')
 export const store = createStore<State>({
   state: {
     user: null,
-    groupViewing: null,
+    currentGroupViewing: null,
     displayProfileSideNav: true
   },
   mutations: {
@@ -27,8 +27,8 @@ export const store = createStore<State>({
       state.user = null
     },
     changeGroupViewing(state, group: Group) {
-      state.groupViewing = group
-      console.log(state.groupViewing)
+      state.currentGroupViewing = group
+      console.log(state.currentGroupViewing)
     }
   }
 })

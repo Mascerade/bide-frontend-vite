@@ -42,3 +42,4 @@
 <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by mattbadal - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/page-not-found" title="page not found icons">Page not found icons created by Muhammad Ali - Flaticon</a>
+<a target="_blank" href="https://icons8.com/icon/132/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
