@@ -1,5 +1,5 @@
 <template>
-  <div v-if="group" class="bg-slate-50">
+  <div v-if="group">
     <navbar></navbar>
     <div class="flex flex-row">
       <div class="xl:w-96 xl:h-[calc(100vh-4rem)] bg-slate-100 shadow-md">

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row font-quicksand items-center lg:h-16 lg:pl-10 xl:pl-14 lg:pr-10 xl:pr-14 bg-white"
+    class="flex flex-row font-quicksand items-center lg:h-16 lg:pl-10 xl:pl-14 lg:pr-10 xl:pr-14"
   >
     <h1
       class="text-gray-700 font-medium lg:text-3xl xl:text-4xl lg:pr-14 xl:pr-20"
