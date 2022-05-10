@@ -1,6 +1,6 @@
 <template>
   <div class="font-comfortaa bg-slate-100">
-    <navbar></navbar>
+    <navbar class="bg-white"></navbar>
     <div class="w-full h-[calc(100vh-4rem)] xl:min-h-[566px] flex flex-row">
       <div class="flex flex-col h-full xl:p-4 bg-slate-200 shadow-md">
         <div class="flex-grow">

@@ -2,7 +2,7 @@
   <div v-if="group">
     <navbar></navbar>
     <div class="flex flex-row">
-      <div class="xl:w-96 xl:h-[calc(100vh-4rem)] bg-slate-100 shadow-md">
+      <div class="xl:w-96 xl:min-h-[calc(100vh-4rem)] bg-slate-100 shadow-md">
         <!-- Left-Side Information About Users/General Group Information (Name/Title/Description) -->
         <div
           class="xl:w-full xl:mt-4 flex flex-col justify-center items-center"
@@ -34,11 +34,13 @@
         </div>
       </div>
 
-      <div class="flex flex-col xl:w-full xl:h-[calc(100vh-4rem)]">
+      <div
+        class="flex flex-col xl:w-full xl:h-[calc(100vh-4rem)] xl:pl-12 xl:-pr-12"
+      >
         <!-- Middle Post/Content Region -->
-        <div class="flex flex-col xl:w-[calc(100%-3rem)] xl:ml-12">
+        <div class="flex flex-col justify-center xl:w-[calc(100%-3rem)]">
           <!-- Taskbar -->
-          <div class="flex flex-row items-center xl:h-14 xl:w-11/12 xl:mt-2">
+          <div class="flex flex-row items-center xl:h-14 xl:w-full xl:mt-2">
             <div class="flex flex-grow">
               <navigation-item class="bg-slate-200">Home</navigation-item>
               <navigation-item>Announcements</navigation-item>
@@ -50,6 +52,13 @@
             >
               <img class="xl:h-8 w-full" :src="searchIcon" alt="" />
             </button>
+          </div>
+          <div class="xl:w-full xl:pl-3 xl:pr-3 xl:mt-3">
+            <post
+              v-for="post in group.posts"
+              :key="post.id"
+              :post="post"
+            ></post>
           </div>
         </div>
       </div>
@@ -66,6 +75,7 @@ import { getGroup } from '../api/group'
 import NotFoundError from '../components/error/NotFoundError.vue'
 import Navbar from '@/components/ui/Navbar.vue'
 import NavigationItem from '@/components/group/NavigationItem.vue'
+import Post from '@/components/group/Post.vue'
 import searchIcon from '@/assets/icons/search-icon-group.svg'
 import defaultProfileImg from '@/assets/empty-groups.png'
 
@@ -73,7 +83,8 @@ export default defineComponent({
   components: {
     NotFoundError,
     Navbar,
-    NavigationItem
+    NavigationItem,
+    Post
   },
   setup() {
     onMounted(async () => {
@@ -81,7 +92,6 @@ export default defineComponent({
       const res = await getGroup(route.params.groupName as string)
       console.log(res)
     })
-
     const store = useStore()
     const group = computed(() => store.state.currentGroupViewing)
 
