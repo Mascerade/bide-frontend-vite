@@ -42,13 +42,13 @@
           <!-- Taskbar -->
           <div class="flex flex-row items-center xl:h-14 xl:w-full xl:mt-2">
             <div class="flex flex-grow">
-              <navigation-item class="bg-slate-200">Home</navigation-item>
+              <navigation-item class="active">Home</navigation-item>
               <navigation-item>Announcements</navigation-item>
               <navigation-item>Messages</navigation-item>
             </div>
 
             <button
-              class="xl:p-2 xl:mr-2 xl:ml-2 rounded-md hover:bg-slate-100"
+              class="xl:p-2 xl:mr-2 xl:ml-2 rounded-md hover:bg-green-100 active:bg-green-200"
             >
               <img class="xl:h-8 w-full" :src="searchIcon" alt="" />
             </button>
