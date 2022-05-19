@@ -1,27 +1,28 @@
 <template>
   <div v-if="group">
-    <navbar></navbar>
+    <navbar class="shadow-sm"></navbar>
     <div class="flex flex-row">
-      <div class="xl:w-96 xl:min-h-[calc(100vh-4rem)] bg-slate-100 shadow-md">
-        <!-- Left-Side Information About Users/General Group Information (Name/Title/Description) -->
-        <div
-          class="xl:w-full xl:mt-4 flex flex-col justify-center items-center"
-        >
-          <!-- Group Profile Information -->
+      <!-- Left-Side Information About Users/General Group Information (Name/Title/Description) -->
+      <div
+        class="xl:w-96 xl:min-h-[calc(100vh-4rem)] flex flex-col bg-slate-100 shadow-md"
+      >
+        <!-- Group Profile Information -->
+        <div class="xl:w-full xl:h-full xl:mt-4 flex flex-col items-center">
           <div
-            class="h-32 w-32 bg-white rounded-full border-2 border-slate-600"
+            class="h-32 w-32 bg-white rounded-full border-2 border-slate-600 shadow-md"
           >
             <img class="h-full rounded-full" :src="defaultProfileImg" alt="" />
           </div>
+
+          <!-- Name, Title, and Description -->
           <div
-            class="xl:w-full xl:pl-2 xl:pr-2 xl:mt-4 flex flex-col justify-center items-center"
+            class="xl:w-full xl:pl-2 xl:pr-2 xl:mt-4 flex flex-col flex-grow items-center"
           >
-            <!-- Name, Title, and Description -->
             <h1 class="text-4xl font-medium">
               {{ group.title }}
             </h1>
             <h3 class="xl:mt-2 text-sm font-medium">{{ group.name }}</h3>
-            <h2 class="xl:mt-2 text-center">
+            <h2 class="xl:mt-2 text-center text-slate-800 font-medium">
               {{ group.description }}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -30,6 +31,14 @@
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </h2>
+          </div>
+
+          <div class="w-full xl:mb-2 xl:pl-3 xl:pr-3">
+            <div
+              class="xl:pl-3 xl:pr-3 xl:pt-2 xl:pb-2 flex flex-row justify-center items-center bg-white rounded-md shadow-sm cursor-pointer hover:bg-gray-100"
+            >
+              <p class="xl:text-2xl text-green-600 font-medium">Join!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -78,6 +87,7 @@ import NavigationItem from '@/components/group/NavigationItem.vue'
 import Post from '@/components/group/Post.vue'
 import searchIcon from '@/assets/icons/search-icon-group.svg'
 import defaultProfileImg from '@/assets/empty-groups.png'
+import joinGroupImg from '@/assets/icons/join-group-green.png'
 
 export default defineComponent({
   components: {
@@ -99,7 +109,8 @@ export default defineComponent({
       store,
       group,
       searchIcon,
-      defaultProfileImg
+      defaultProfileImg,
+      joinGroupImg
     }
   }
 })

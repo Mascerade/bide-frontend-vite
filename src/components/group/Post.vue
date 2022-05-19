@@ -1,7 +1,7 @@
 <template>
   <div class="xl:p-3 bg-white border-2 border-slate-100 rounded-md">
+    <!-- Header -->
     <div>
-      <!-- Header -->
       <h1 class="text-slate-700 xl:text-2xl font-semibold">{{ post.title }}</h1>
       <h2 class="text-slate-800 font-semibold">
         {{ post.author.firstName }} {{ post.author.lastName }}
