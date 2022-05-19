@@ -21,6 +21,7 @@ export const store = createStore<State>({
       state.displayProfileSideNav = !state.displayProfileSideNav
     },
     changeUser(state, user: User) {
+      console.log(user)
       state.user = user
     },
     logOut(state) {
