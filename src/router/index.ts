@@ -26,12 +26,13 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    meta: { authentication: true },
+    meta: { authentication: 'required' },
     component: Dashboard
   },
   {
     path: '/group/:groupName',
     name: 'Group',
+    meta: { authentication: 'optional' },
     component: Group
   }
 ]
@@ -43,7 +44,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   console.log('beforeEach called')
-  if (to.meta.authentication || to.name == 'Sign In') {
+  if (to.meta.authentication == 'required' || to.name == 'Sign In') {
     if (!store.state.user) {
       const user = await loadInitialUser()
       console.log(user)
@@ -70,6 +71,13 @@ router.beforeEach(async (to, from, next) => {
         return
       }
       next()
+    }
+  } else if (to.meta.authetnication == 'optional') {
+    const user = await loadInitialUser()
+    if (user) {
+      store.commit('changeUser', user)
+      next()
+      return
     }
   } else {
     next()

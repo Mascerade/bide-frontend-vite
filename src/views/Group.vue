@@ -1,10 +1,11 @@
 <template>
   <div v-if="group">
     <navbar class="shadow-sm"></navbar>
-    <div class="flex flex-row">
+    <div class="flex flex-row" v-if="!memberOfGroup">
       <guest-left-side-nav />
       <guest-main-content />
     </div>
+    <div class="flex flex-row" v-else></div>
   </div>
   <not-found-error v-else></not-found-error>
 </template>
@@ -34,15 +35,18 @@ export default defineComponent({
   setup() {
     onMounted(async () => {
       const route = useRoute()
-      const res = await getGroup(route.params.groupName as string)
-      console.log(res)
+      await getGroup(route.params.groupName as string)
     })
     const store = useStore()
+    const user = computed(() => store.state.user)
     const group = computed(() => store.state.currentGroupViewing)
+    const memberOfGroup = computed(() => store.getters.memberOfGroup)
 
     return {
       store,
+      user,
       group,
+      memberOfGroup,
       joinGroupImg
     }
   }

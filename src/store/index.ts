@@ -31,6 +31,25 @@ export const store = createStore<State>({
       state.currentGroupViewing = group
       console.log(state.currentGroupViewing)
     }
+  },
+  getters: {
+    memberOfGroup(state) {
+      // Check whether a user is a part of a group
+      console.log(
+        `User: ${state.user} userGroups: ${state.user?.userGroups} currentGroupViewing: ${state.currentGroupViewing}`
+      )
+      if (state.user && state.user.userGroups && state.currentGroupViewing) {
+        for (let group of state.user.userGroups) {
+          console.log(
+            `UserID: ${group.id} GroupID: ${state.currentGroupViewing.id}`
+          )
+          if (state.currentGroupViewing.id == group.id) {
+            return true
+          }
+        }
+      }
+      return false
+    }
   }
 })
 
