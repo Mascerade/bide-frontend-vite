@@ -72,7 +72,7 @@ router.beforeEach(async (to, from, next) => {
       }
       next()
     }
-  } else if (to.meta.authetnication == 'optional') {
+  } else if (to.meta.authentication == 'optional') {
     const user = await loadInitialUser()
     if (user) {
       store.commit('changeUser', user)
