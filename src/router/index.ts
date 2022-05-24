@@ -76,9 +76,9 @@ router.beforeEach(async (to, from, next) => {
     const user = await loadInitialUser()
     if (user) {
       store.commit('changeUser', user)
-      next()
-      return
     }
+    next()
+    return
   } else {
     next()
   }

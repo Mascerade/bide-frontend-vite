@@ -1,11 +1,14 @@
 <template>
   <div v-if="group">
     <navbar class="shadow-sm"></navbar>
-    <div class="flex flex-row" v-if="!memberOfGroup">
+    <div class="flex flex-row" v-if="memberOfGroup">
+      <member-left-side-nav />
+      <member-main-content />
+    </div>
+    <div class="flex flex-row" v-else>
       <guest-left-side-nav />
       <guest-main-content />
     </div>
-    <div class="flex flex-row" v-else></div>
   </div>
   <not-found-error v-else></not-found-error>
 </template>
@@ -16,21 +19,20 @@ import { useRoute } from 'vue-router'
 import { useStore } from '../store'
 import { getGroup } from '../api/group'
 import NotFoundError from '../components/error/NotFoundError.vue'
-import GuestLeftSideNav from '@/components/group/guest/LeftSideNav.vue'
-import GuestMainContent from '@/components/group/guest/MainContent.vue'
+import GuestLeftSideNav from '@/components/group/guest/GuestLeftSideNav.vue'
+import GuestMainContent from '@/components/group/guest/GuestMainContent.vue'
+import MemberLeftSideNav from '@/components/group/member/MemberLeftSideNav.vue'
+import MemberMainContent from '@/components/group/member/MemberMainContent.vue'
 import Navbar from '@/components/ui/Navbar.vue'
-import NavigationItem from '@/components/group/NavigationItem.vue'
-import Post from '@/components/group/Post.vue'
-import joinGroupImg from '@/assets/icons/join-group-green.png'
 
 export default defineComponent({
   components: {
     NotFoundError,
     GuestLeftSideNav,
     GuestMainContent,
-    Navbar,
-    NavigationItem,
-    Post
+    MemberLeftSideNav,
+    MemberMainContent,
+    Navbar
   },
   setup() {
     onMounted(async () => {
@@ -46,8 +48,7 @@ export default defineComponent({
       store,
       user,
       group,
-      memberOfGroup,
-      joinGroupImg
+      memberOfGroup
     }
   }
 })
