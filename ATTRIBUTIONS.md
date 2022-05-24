@@ -44,3 +44,4 @@
 <a href="https://www.flaticon.com/free-icons/page-not-found" title="page not found icons">Page not found icons created by Muhammad Ali - Flaticon</a>
 <a target="_blank" href="https://icons8.com/icon/132/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a href="https://www.flaticon.com/free-icons/discussion" title="discussion icons">Discussion icons created by HAJICON - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/post" title="post icons">Post icons created by Bingge Liu - Flaticon</a>

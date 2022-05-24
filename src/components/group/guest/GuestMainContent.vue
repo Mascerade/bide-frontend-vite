@@ -2,7 +2,7 @@
   <main-content-container>
     <!-- Taskbar -->
     <taskbar-container>
-      <navigation-item class="bg-green-200">Posts</navigation-item>
+      <navigation-item class="bg-green-400 text-white">Posts</navigation-item>
     </taskbar-container>
 
     <!-- Posts Container -->

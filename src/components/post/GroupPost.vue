@@ -1,7 +1,7 @@
 <template>
-  <div class="xl:p-3 bg-white border-2 border-slate-100 rounded-md">
+  <div class="">
     <!-- Header -->
-    <div>
+    <div class="xl:p-3 border-2 border-slate-100 rounded-t-md">
       <h1 class="text-slate-700 xl:text-2xl font-semibold">{{ post.title }}</h1>
       <h2 class="text-slate-800 font-semibold">
         {{ post.author.firstName }} {{ post.author.lastName }}
@@ -20,13 +20,18 @@
           })
         }}
       </h2>
-      <hr class="bg-slate-100 border-none h-[1px] xl:mt-3 xl:mb-3" />
     </div>
-    <h2 class="xl:text-lg">{{ post.content }}</h2>
-    <hr class="bg-slate-100 border-none h-[1px] xl:mt-4" />
-    <div class="xl:w-full xl:pt-3 flex flex-row">
+
+    <h2 class="xl:p-3 xl:text-lg border-l-2 border-r-2 border-slate-100">
+      {{ post.content }}
+    </h2>
+
+    <!-- Footer -->
+    <div
+      class="xl:w-full xl:p-3 flex flex-row border-2 border-slate-100 rounded-b-md"
+    >
       <div
-        class="flex flex-row xl:p-3 hover:bg-green-100 active:bg-green-200 items-center cursor-pointer rounded-md"
+        class="flex flex-row hover:bg-green-100 active:bg-green-200 items-center cursor-pointer rounded-md"
       >
         <img :src="discussionImg" alt="" class="xl:h-10 xl:w-10" />
         <p class="xl:text-xl xl:ml-2 font-medium select-none cursor-pointer">
