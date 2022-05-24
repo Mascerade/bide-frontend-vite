@@ -45,3 +45,5 @@
 <a target="_blank" href="https://icons8.com/icon/132/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a href="https://www.flaticon.com/free-icons/discussion" title="discussion icons">Discussion icons created by HAJICON - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/post" title="post icons">Post icons created by Bingge Liu - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/leaf-fall" title="leaf fall icons">Leaf fall icons created by Ghozi Muhtarom - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/nature" title="nature icons">Nature icons created by Freepik - Flaticon</a>

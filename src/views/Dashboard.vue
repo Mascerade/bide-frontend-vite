@@ -57,7 +57,10 @@
       <div class="flex flex-col flex-grow">
         <div class="flex xl:w-full lg:flex-row"></div>
 
-        <div v-if="userGroups?.length > 0" class="flex w-full">
+        <div
+          v-if="userGroups?.length && userGroups?.length > 0"
+          class="flex w-full"
+        >
           <div class="flex w-full flex-wrap xl:ml-5">
             <group-card
               v-for="userGroup in userGroups"

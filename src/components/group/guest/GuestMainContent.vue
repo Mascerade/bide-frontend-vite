@@ -6,7 +6,7 @@
     </taskbar-container>
 
     <!-- Posts Container -->
-    <post-container>
+    <post-container :postsExists="group.posts !== null">
       <post v-for="post in group.posts" :key="post.id" :post="post"></post>
     </post-container>
   </main-content-container>
@@ -32,7 +32,6 @@ export default defineComponent({
   setup() {
     const store = useStore()
     const group = computed(() => store.state.currentGroupViewing)
-
     return {
       group
     }

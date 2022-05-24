@@ -1,10 +1,10 @@
 export type User = {
   id: number
-  email: String
-  password: String
-  username: String
-  firstName: String | null
-  lastName: String | null
+  email: string
+  password: string
+  username: string
+  firstName: string | null
+  lastName: string | null
   posts?: Post[]
   userGroups?: GroupUser[]
   groupGeneralTokens?: GeneralTokenGroupUser[]
@@ -17,9 +17,10 @@ export type CreateUser = Omit<
 
 export type Post = {
   id: number
-  postData: String
-  title: String
-  conent: String
+  postData: string
+  postDate: string
+  title: string
+  content: string
   author: User
   authorId: User['id']
   group: Group
@@ -28,18 +29,18 @@ export type Post = {
 
 export type Group = {
   id: number
-  name: String
-  title: String
-  description: String
+  name: string
+  title: string
+  description: string
   posts?: Post[]
   groupUsers?: GroupUser[]
   userGeneralTokens?: GeneralTokenGroupUser
 }
 
 export type GeneralToken = {
-  id: String
-  title: String
-  description: String
+  id: string
+  title: string
+  description: string
   groupUsers?: GeneralTokenGroupUser[]
 }
 
@@ -49,7 +50,7 @@ export type GroupUser = {
   userId: User['id']
   group: Group
   groupId: number
-  dateJoined: String
+  dateJoined: string
 }
 
 export type GeneralTokenGroupUser = {
@@ -59,6 +60,6 @@ export type GeneralTokenGroupUser = {
   group: Group
   groupId: number
   generalToken: GeneralToken
-  generalTokenId: String
-  dateAssigned: String
+  generalTokenId: string
+  dateAssigned: string
 }

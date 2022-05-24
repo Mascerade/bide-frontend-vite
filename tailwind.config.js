@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         quicksand: ['Quicksand'],
-        comfortaa: ['Comfortaa']
+        comfortaa: ['Comfortaa'],
+        oxygen: ['Oxygen']
       }
     },
     colors: {

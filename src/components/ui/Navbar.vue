@@ -2,6 +2,7 @@
   <div
     class="flex flex-row font-quicksand items-center lg:h-16 lg:pl-10 xl:pl-14 lg:pr-10 xl:pr-14"
   >
+    <img :src="logo" alt="" class="xl:h-8 xl:w-8 xl:mr-2" />
     <h1
       class="text-gray-700 font-medium lg:text-3xl xl:text-4xl lg:pr-14 xl:pr-20"
     >
@@ -17,3 +18,16 @@
     <div></div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import logo from '@/assets/icons/logo.png'
+
+export default defineComponent({
+  setup() {
+    return {
+      logo
+    }
+  }
+})
+</script>
