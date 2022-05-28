@@ -1,5 +1,5 @@
 <template>
-  <div class="font-oxygen">
+  <div class="">
     <!-- Header -->
     <div class="xl:p-3 border-[1px] border-slate-100">
       <h1 class="text-slate-800 xl:text-2xl font-medium">{{ post.title }}</h1>

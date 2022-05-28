@@ -102,7 +102,7 @@
     </div>
 
     <div class="w-full lg:pt-16 xl:pt-24 lg:pb-16 xl:pb-24 bg-green-500">
-      <h1 class="text-green-50 font-medium lg:text-4xl lg:text-5xl text-center">
+      <h1 class="text-green-50 font-medium lg:text-5xl text-center">
         Differentiating Features
       </h1>
       <div></div>
