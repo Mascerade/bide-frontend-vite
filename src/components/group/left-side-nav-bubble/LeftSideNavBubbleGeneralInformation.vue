@@ -1,6 +1,6 @@
 <template>
   <div
-    class="xl:p-2 text-center border-[1px] border-slate-100 rounded-md shadow-md"
+    class="xl:p-2 text-center border-[1px] border-slate-100 rounded-lg shadow-md"
   >
     <h2 class="text-xl text-green-500 font-medium">{{ title }}</h2>
     <h3>

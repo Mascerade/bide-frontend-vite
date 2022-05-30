@@ -31,7 +31,7 @@ export default defineComponent({
   },
   setup() {
     const store = useStore()
-    const group = computed(() => store.state.currentGroupViewing)
+    const group = computed(() => store.state.currentGroupViewing!)
     return {
       group
     }

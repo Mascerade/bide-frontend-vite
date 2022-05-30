@@ -5,6 +5,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import 'typeface-quicksand'
+import 'typeface-montserrat'
 
 export default defineComponent({
   name: 'App'

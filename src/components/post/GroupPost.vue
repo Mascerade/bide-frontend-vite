@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <!-- Header -->
-    <div class="xl:p-3 border-[1px] border-slate-100">
+    <div class="xl:p-3 border-[1px] border-slate-100 rounded-t-md">
       <h1 class="text-slate-800 xl:text-2xl font-medium">{{ post.title }}</h1>
       <h2 class="text-slate-900 font-semibold">
         {{ post.author.firstName }} {{ post.author.lastName }}
@@ -29,7 +29,9 @@
     </h2>
 
     <!-- Footer -->
-    <div class="xl:w-full xl:p-3 flex flex-row border-[1px] border-slate-100">
+    <div
+      class="xl:w-full xl:p-3 flex flex-row border-[1px] border-slate-100 rounded-b-md"
+    >
       <div
         class="flex flex-row xl:p-3 hover:bg-green-100 active:bg-green-200 items-center cursor-pointer rounded-md"
       >

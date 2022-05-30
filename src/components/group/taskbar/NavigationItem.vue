@@ -1,11 +1,9 @@
 <template>
-  <button
-    class="xl:pt-1 xl:pb-1 xl:pr-2 xl:pl-2 xl:mr-4 rounded-md hover:bg-green-300 active:bg-green-400"
+  <div
+    class="flex flex-col h-full xl:pl-5 xl:pr-5 justify-center text-center text-xl hover:text-white hover:bg-green-300 hover:cursor-pointer active:bg-green-400 first:rounded-l-lg"
   >
-    <p class="xl:text-lg font-medium">
-      <slot></slot>
-    </p>
-  </button>
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">

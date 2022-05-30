@@ -15,7 +15,13 @@
         class="h-3/4 w-3/4 pl-4 text-xl bg-gray-100 rounded-xl focus:outline-none"
       />
     </div>
-    <div></div>
+    <div>
+      <img
+        class="xl:w-12 xl:h-12 rounded-full hover:cursor-pointer"
+        src="/src/assets/icons/default-profile-img.jpg"
+        alt=""
+      />
+    </div>
   </div>
 </template>
 

@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         quicksand: ['Quicksand'],
         comfortaa: ['Comfortaa'],
+        montserrat: ['Montserrat'],
         oxygen: ['Oxygen']
       }
     },

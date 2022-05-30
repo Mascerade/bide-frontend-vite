@@ -1,8 +1,8 @@
 <template>
   <div
-    class="xl:w-full xl:h-14 xl:mt-2 flex flex-row items-center border-b-[1px] border-slate-100"
+    class="xl:w-full xl:h-14 flex flex-row items-center border-[1px] border-slate-100 rounded-lg shadow-md"
   >
-    <div class="flex flex-grow">
+    <div class="xl:h-full flex flex-grow">
       <slot></slot>
     </div>
 
