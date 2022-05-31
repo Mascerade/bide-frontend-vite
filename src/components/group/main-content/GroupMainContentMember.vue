@@ -3,8 +3,6 @@
     <!-- Taskbar -->
     <taskbar-container>
       <navigation-item class="bg-green-400 text-white">Posts</navigation-item>
-      <navigation-item>Other</navigation-item>
-      <navigation-item>Other</navigation-item>
     </taskbar-container>
 
     <!-- Posts Container -->

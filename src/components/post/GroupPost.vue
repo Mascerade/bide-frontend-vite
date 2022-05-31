@@ -2,30 +2,38 @@
   <div class="flex flex-col bg-white rounded-lg">
     <!-- Header -->
     <div
-      class="xl:p-4 xl:pl-7 xl:pr-7 border-b-[1px] border-gray-100 rounded-t-md"
+      class="flex flex-row items-center xl:p-4 xl:pl-7 xl:pr-7 border-b-[1px] border-gray-100 rounded-t-md"
     >
-      <div class="flex flex-row">
-        <h1 class="flex-grow text-slate-800 xl:text-2xl font-medium">
-          {{ post.title }}
-        </h1>
-        <h2 class="xl:text-sm text-slate-600 font-semibold">
-          {{
-            new Date(post.postDate).toLocaleDateString('en-us', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })
-          }}
+      <img
+        class="xl:h-10 xl:w-10 mr-4 rounded-full shadow-md hover:cursor-pointer"
+        src="/src/assets/icons/default-profile-img-2.png"
+        alt=""
+      />
+      <div class="flex-grow">
+        <div class="flex flex-row">
+          <h1 class="flex-grow text-slate-900 xl:text-xl font-medium">
+            {{ post.title }}
+          </h1>
+          <h2 class="xl:text-sm text-slate-600 font-semibold">
+            {{
+              new Date(post.postDate).toLocaleDateString('en-us', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })
+            }}
+          </h2>
+        </div>
+
+        <h2 class="text-slate-900 font-semibold">
+          {{ post.author.firstName }} {{ post.author.lastName }}
+          <span class="text-slate-900"> • </span>
+          <span class="text-green-500 cursor-pointer">{{
+            post.author.username
+          }}</span>
         </h2>
       </div>
-      <h2 class="text-slate-900 font-semibold">
-        {{ post.author.firstName }} {{ post.author.lastName }}
-        <span class="text-slate-900"> • </span>
-        <span class="text-green-500 cursor-pointer">{{
-          post.author.username
-        }}</span>
-      </h2>
     </div>
 
     <h2 class="xl:p-3 xl:pl-7 xl:pr-7 xl:text-base text-slate-800">
