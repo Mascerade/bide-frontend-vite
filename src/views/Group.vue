@@ -5,7 +5,8 @@
   >
     <navbar class="w-full shadow-sm bg-white"></navbar>
     <div class="max-w-[1560px]">
-      <group-comfortable />
+      <group-comfortable v-if="view == 'comfortable'" />
+      <group-compact v-if="view == 'compact'" />
     </div>
   </div>
   <not-found-error v-else></not-found-error>
@@ -19,6 +20,7 @@ import { getGroup } from '../api/group'
 import NotFoundError from '../components/error/NotFoundError.vue'
 
 import GroupComfortable from '@/components/group/comfortable-view/GroupComfortable.vue'
+import GroupCompact from '@/components/group/compact-view/GroupCompact.vue'
 import Navbar from '@/components/ui/Navbar.vue'
 import 'typeface-oxygen'
 import 'typeface-quicksand'
@@ -27,19 +29,22 @@ export default defineComponent({
   components: {
     NotFoundError,
     Navbar,
-    GroupComfortable
+    GroupComfortable,
+    GroupCompact
   },
   setup() {
     onMounted(async () => {
       const route = useRoute()
       await getGroup(route.params.groupName as string)
     })
+    const view: 'comfortable' | 'compact' = 'comfortable'
     const store = useStore()
     const user = computed(() => store.state.user)
     const group = computed(() => store.state.currentGroupViewing)
     const memberOfGroup = computed(() => store.getters.memberOfGroup)
 
     return {
+      view,
       store,
       user,
       group,

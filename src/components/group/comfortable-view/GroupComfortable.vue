@@ -4,8 +4,8 @@
     <group-comfortable-content-container>
       <group-comfortable-left-side-member v-if="memberOfGroup" />
       <group-comfortable-left-side-guest v-else />
-      <member-main-content v-if="memberOfGroup" />
-      <guest-main-content v-else />
+      <group-main-content-member v-if="memberOfGroup" />
+      <group-main-content-guest v-else />
     </group-comfortable-content-container>
   </group-comfortable-container>
 </template>
@@ -17,8 +17,8 @@ import GroupComfortableContentContainer from '@/components/group/comfortable-vie
 import GroupComfortableHeader from '@/components/group/comfortable-view/GroupComfortableHeader.vue'
 import GroupComfortableLeftSideMember from '@/components/group/comfortable-view/GroupComfortableLeftSideMember.vue'
 import GroupComfortableLeftSideGuest from '@/components/group/comfortable-view/GroupComfortableLeftSideGuest.vue'
-import MemberMainContent from '@/components/group/main-content/MemberMainContent.vue'
-import GuestMainContent from '@/components/group/main-content/GuestMainContent.vue'
+import GroupMainContentMember from '@/components/group/main-content/GroupMainContentMember.vue'
+import GroupMainContentGuest from '@/components/group/main-content/GroupMainContentGuest.vue'
 import { useStore } from '@/store'
 
 export default defineComponent({
@@ -28,8 +28,8 @@ export default defineComponent({
     GroupComfortableContentContainer,
     GroupComfortableLeftSideMember,
     GroupComfortableLeftSideGuest,
-    MemberMainContent,
-    GuestMainContent
+    GroupMainContentMember,
+    GroupMainContentGuest
   },
   setup() {
     const store = useStore()

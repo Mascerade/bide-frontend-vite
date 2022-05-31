@@ -1,6 +1,6 @@
 <template>
   <div
-    class="xl:w-[21rem] xl:min-h-[calc(100vh-4rem)] xl:max-h-[calc(100vh-3.5rem)] xl:p-4 overflow-y-auto thin-scroll"
+    class="xl:w-[22rem] xl:min-h-[calc(100vh-4rem)] xl:max-h-[calc(100vh-3.5rem)] xl:p-4"
   >
     <slot></slot>
   </div>
