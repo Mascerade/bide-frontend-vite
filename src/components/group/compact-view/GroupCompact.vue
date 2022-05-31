@@ -2,8 +2,8 @@
   <div class="flex flex-row">
     <group-compact-left-side-member v-if="memberOfGroup" />
     <group-compact-left-side-guest v-else />
-    <group-main-content-member v-if="memberOfGroup" />
-    <group-main-content-guest v-else />
+    <group-main-content-member class="xl:mt-4" v-if="memberOfGroup" />
+    <group-main-content-guest class="xl:mt-4" v-else />
   </div>
 </template>
 

@@ -5,16 +5,18 @@
     </div>
 
     <button
-      class="xl:p-2 xl:mr-2 xl:ml-2 rounded-md hover:bg-green-100 active:bg-green-200"
+      title="Search"
+      class="flex flex-col xl:mr-4 justify-center items-center rounded-md"
     >
-      <img class="xl:h-8 w-full" :src="searchIcon" alt="" />
+      <i
+        class="xl:text-xl fi fi-rr-search text-slate-700 hover:text-green-500"
+      ></i>
     </button>
-    <button
-      v-if="memberOfGroup"
-      title="Post"
-      class="xl:p-2 xl:mr-2 xl:ml-2 rounded-md hover:bg-green-100 active:bg-green-200"
-    >
-      <img class="xl:h-8 w-full" :src="postIcon" alt="Make a Post" />
+
+    <button title="Post" class="xl:h-10 xl:w-10 xl:mr-4" v-if="memberOfGroup">
+      <i
+        class="xl:text-xl fi fi-rr-pencil text-slate-700 hover:text-green-500"
+      ></i>
     </button>
   </div>
 </template>

@@ -21,13 +21,11 @@
         v-if="username"
       >
         <img
-          class="xl:w-8 xl:h-8 xl:mr-2 rounded-full hover:cursor-pointer"
-          src="/src/assets/icons/default-profile-img.jpg"
+          class="xl:w-8 xl:h-8 xl:mr-2 rounded-full hover:cursor-pointer shadow-md"
+          src="/src/assets/icons/default-profile-img-2.png"
           alt=""
         />
-        <span class="text-slate-800 xl:text-md font-medium">{{
-          username
-        }}</span>
+        <span class="text-slate-700 xl:text-md font-bold">{{ username }}</span>
         <i
           class="xl:text-md xl:mt-2 fi fi-rr-angle-small-down text-slate-800"
         ></i>

@@ -16,8 +16,8 @@
 import { useStore } from '@/store'
 import { computed, defineComponent } from 'vue'
 import MainContentContainer from '@/components/group/main-content/MainContentContainer.vue'
-import TaskbarContainer from '@/components/group/taskbar/TaskbarContainer.vue'
-import NavigationItem from '@/components/group/taskbar/NavigationItem.vue'
+import TaskbarContainer from '@/components/group/taskbar/GroupTaskbarContainer.vue'
+import NavigationItem from '@/components/group/taskbar/GroupTaskbarNavigationItem.vue'
 import PostContainer from '@/components/post/GroupPostContainer.vue'
 import Post from '@/components/post/GroupPost.vue'
 
