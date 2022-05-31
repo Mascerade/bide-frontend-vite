@@ -7,11 +7,12 @@
         <member-left-side-nav />
         <member-main-content />
       </div>
+
       <div class="flex flex-col" v-else>
         <!-- Group Header -->
         <div class="w-full xl:pl-14 xl:pr-14 xl:mt-4 xl:mb-6">
           <div
-            class="flex flex-row w-full xl:h-56 xl:pl-14 bg-green-500 items-center rounded-xl shadow-md"
+            class="flex flex-row w-full xl:h-56 justify-center bg-green-500 items-center rounded-xl shadow-md"
           >
             <img
               class="xl:h-44 xl:w-44 xl:mr-10 rounded-full border-2 border-slate-100 shadow-md"

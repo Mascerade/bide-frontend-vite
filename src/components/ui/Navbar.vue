@@ -16,24 +16,48 @@
       />
     </div>
     <div>
-      <img
-        class="xl:w-12 xl:h-12 rounded-full hover:cursor-pointer"
-        src="/src/assets/icons/default-profile-img.jpg"
-        alt=""
-      />
+      <div
+        class="flex flex-row items-center xl:p-1.5 border-[1px] border-[transparent] hover:border-slate-300 hover:cursor-pointer rounded-md"
+        v-if="username"
+      >
+        <img
+          class="xl:w-8 xl:h-8 xl:mr-2 rounded-full hover:cursor-pointer"
+          src="/src/assets/icons/default-profile-img.jpg"
+          alt=""
+        />
+        <span class="text-slate-800 xl:text-md font-medium">{{
+          username
+        }}</span>
+        <i
+          class="xl:text-md xl:mt-2 fi fi-rr-angle-small-down text-slate-800"
+        ></i>
+      </div>
+      <div v-else>
+        <nav-button :to="{ path: '/signin' }">Log In</nav-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import logo from '@/assets/icons/logo.png'
+import { useStore } from '@/store'
+import NavButton from '@/components/navigation/NavButton.vue'
 
 export default defineComponent({
+  components: {
+    NavButton
+  },
   setup() {
+    const store = useStore()
+    const username = computed(() => store.state.user?.username)
     return {
-      logo
+      logo,
+      username
     }
   }
 })
 </script>
+
+<style lang="css"></style>

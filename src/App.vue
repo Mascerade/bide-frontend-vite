@@ -13,6 +13,8 @@ export default defineComponent({
 </script>
 
 <style>
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
 .green-gradient-1 {
   background-color: #08e1ae;
   background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
