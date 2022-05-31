@@ -19,8 +19,8 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import LeftSideNavBubbleContainer from '@/components/group/left-side-nav-bubble/LeftSideNavBubbleContainer.vue'
-import LeftSideNavBubbleProfile from '@/components/group/left-side-nav-bubble/LeftSideNavBubbleProfile.vue'
-import LeftSideNavBubbleGeneralInformation from '@/components/group/left-side-nav-bubble/LeftSideNavBubbleGeneralInformation.vue'
+import LeftSideNavBubbleProfile from '@/components/group/condensed-view/CondensedProfile.vue'
+import LeftSideNavBubbleGeneralInformation from '@/components/group/BubbleGeneralInformation.vue'
 import { useStore } from '@/store'
 
 export default defineComponent({
