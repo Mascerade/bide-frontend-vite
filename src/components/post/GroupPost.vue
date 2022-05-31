@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col bg-white rounded-lg shadow-md">
+  <div class="flex flex-col bg-white rounded-lg">
     <!-- Header -->
     <div
-      class="xl:p-4 xl:pl-7 xl:pr-7 border-[1px] border-slate-100 rounded-t-md"
+      class="xl:p-4 xl:pl-7 xl:pr-7 border-b-[1px] border-gray-100 rounded-t-md"
     >
       <div class="flex flex-row">
         <h1 class="flex-grow text-slate-800 xl:text-2xl font-medium">
@@ -28,14 +28,12 @@
       </h2>
     </div>
 
-    <h2
-      class="xl:p-3 xl:pl-7 xl:pr-7 xl:text-base border-l-[1px] border-r-[1px] border-slate-100 text-slate-800"
-    >
+    <h2 class="xl:p-3 xl:pl-7 xl:pr-7 xl:text-base text-slate-800">
       {{ post.content }}
     </h2>
 
     <div
-      class="xl:w-full xl:pt-2 xl:pb-4 xl:pl-7 xl:pr-7 flex flex-row border-b-[1px] border-r-[1px] border-l-[1px] border-slate-100 rounded-b-md"
+      class="xl:w-full xl:pt-2 xl:pb-4 xl:pl-7 xl:pr-7 flex flex-row border-slate-100 rounded-b-md"
     >
       <div class=""></div>
       <div class="flex flex-row flex-grow">

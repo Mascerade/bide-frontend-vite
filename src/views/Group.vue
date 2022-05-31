@@ -3,9 +3,7 @@
     class="flex flex-col w-full items-center bg-light-background"
     v-if="group"
   >
-    <navbar
-      class="w-full border-b-2 border-slate-50 shadow-md bg-white"
-    ></navbar>
+    <navbar class="w-full shadow-sm bg-white"></navbar>
 
     <div class="flex flex-col max-w-[1560px]">
       <div class="flex flex-row" v-if="memberOfGroup">
@@ -38,9 +36,7 @@
         <!-- Group Content -->
         <div class="flex flex-row xl:pl-14 xl:pr-14">
           <div class="xl:w-[22rem]">
-            <div
-              class="flex flex-row xl:p-4 xl:mb-2 border-[1px] border-slate-100 rounded-lg shadow-md bg-white"
-            >
+            <div class="flex flex-row xl:p-4 xl:mb-2 rounded-lg bg-white">
               <span class="flex-grow text-lg text-green-500 font-medium"
                 >Group Members:
               </span>

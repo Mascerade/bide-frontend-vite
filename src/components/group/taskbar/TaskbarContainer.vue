@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="xl:w-full xl:h-12 flex flex-row items-center bg-white rounded-md shadow-md"
-  >
+  <div class="xl:w-full xl:h-12 flex flex-row items-center bg-white rounded-md">
     <div class="xl:h-full flex flex-grow">
       <slot></slot>
     </div>
