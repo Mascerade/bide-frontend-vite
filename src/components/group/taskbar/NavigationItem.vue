@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col h-full xl:pl-5 xl:pr-5 justify-center text-center text-xl hover:text-white hover:bg-green-300 hover:cursor-pointer active:bg-green-400 first:rounded-l-lg"
+    class="flex flex-col h-full xl:pl-5 xl:pr-5 justify-center text-center text-lg font-medium hover:text-white hover:bg-green-300 hover:cursor-pointer active:bg-green-400 first:rounded-l-md"
   >
     <slot></slot>
   </div>

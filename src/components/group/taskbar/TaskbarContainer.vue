@@ -1,6 +1,6 @@
 <template>
   <div
-    class="xl:w-full xl:h-14 flex flex-row items-center border-[1px] border-slate-100 rounded-lg shadow-md"
+    class="xl:w-full xl:h-12 flex flex-row items-center bg-white rounded-md shadow-md"
   >
     <div class="xl:h-full flex flex-grow">
       <slot></slot>

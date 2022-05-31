@@ -1,9 +1,9 @@
 <template>
   <div
-    class="xl:p-2 text-center border-[1px] border-slate-100 rounded-lg shadow-md"
+    class="xl:p-5 border-[1px] border-slate-100 rounded-lg shadow-md bg-white"
   >
-    <h2 class="text-xl text-green-500 font-medium">{{ title }}</h2>
-    <h3>
+    <h2 class="text-lg text-green-500 font-medium">{{ title }}</h2>
+    <h3 class="text-gray-800">
       {{ description }} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
       ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

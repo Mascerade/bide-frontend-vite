@@ -1,6 +1,11 @@
 <template>
-  <div class="flex flex-col w-full items-center" v-if="group">
-    <navbar class="w-full border-b-2 border-slate-50 shadow-md"></navbar>
+  <div
+    class="flex flex-col w-full items-center bg-light-background"
+    v-if="group"
+  >
+    <navbar
+      class="w-full border-b-2 border-slate-50 shadow-md bg-white"
+    ></navbar>
 
     <div class="flex flex-col max-w-[1560px]">
       <div class="flex flex-row" v-if="memberOfGroup">
@@ -32,14 +37,16 @@
 
         <!-- Group Content -->
         <div class="flex flex-row xl:pl-14 xl:pr-14">
-          <div class="xl:w-80">
+          <div class="xl:w-[22rem]">
             <div
-              class="xl:p-2 xl:mb-2 text-center border-[1px] border-slate-100 rounded-lg shadow-md"
+              class="flex flex-row xl:p-4 xl:mb-2 border-[1px] border-slate-100 rounded-lg shadow-md bg-white"
             >
-              <span class="text-xl text-green-500 font-medium"
+              <span class="flex-grow text-lg text-green-500 font-medium"
                 >Group Members:
               </span>
-              <span class="text-xl text-slate-900"> 1</span>
+              <span class="text-xl text-gray-600 font-medium">
+                {{ group.groupUsers.length }}</span
+              >
             </div>
             <left-side-nav-bubble-general-information
               :title="'About'"

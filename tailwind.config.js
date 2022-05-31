@@ -10,7 +10,10 @@ module.exports = {
         quicksand: ['Quicksand'],
         comfortaa: ['Comfortaa'],
         montserrat: ['Montserrat'],
-        oxygen: ['Oxygen']
+        oxygen: ['Oxygen'],
+        poppins: ['Poppins'],
+        raleway: ['Raleway'],
+        rubik: ['Rubik']
       }
     },
     colors: {
@@ -19,7 +22,8 @@ module.exports = {
       green: colors.green,
       teal: colors.teal,
       red: colors.red,
-      slate: colors.slate
+      slate: colors.slate,
+      'light-background': '#f8f8fd'
     }
   }
 }

@@ -6,6 +6,9 @@
 import { defineComponent } from 'vue'
 import 'typeface-quicksand'
 import 'typeface-montserrat'
+import 'typeface-poppins'
+import 'typeface-raleway'
+import 'typeface-rubik'
 
 export default defineComponent({
   name: 'App'
