@@ -6,18 +6,23 @@
 
     <button
       title="Search"
-      class="flex flex-col xl:mr-4 justify-center items-center rounded-md"
+      class="flex flex-col xl:mr-8 justify-center items-center rounded-md"
     >
       <i
         class="xl:text-xl fi fi-rr-search text-slate-700 hover:text-green-500"
       ></i>
     </button>
 
-    <button title="Post" class="xl:h-10 xl:w-10 xl:mr-4" v-if="memberOfGroup">
+    <router-link
+      title="Post"
+      class="flex flex-col justify-center xl:h-10 xl:w-10 xl:mr-4"
+      :to="`/group/${groupName}/post`"
+      v-if="memberOfGroup"
+    >
       <i
         class="xl:text-xl fi fi-rr-pencil text-slate-700 hover:text-green-500"
       ></i>
-    </button>
+    </router-link>
   </div>
 </template>
 
@@ -26,15 +31,25 @@ import { computed, defineComponent } from 'vue'
 import searchIcon from '@/assets/icons/search-icon-group.svg'
 import postIcon from '@/assets/icons/make-post.png'
 import { useStore } from '@/store'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
     const store = useStore()
+    const router = useRouter()
     const memberOfGroup = computed(() => store.getters.memberOfGroup)
+    const groupId = store.state.currentGroupViewing!.id
+    const groupName = store.state.currentGroupViewing!.name
+    const groupTitle = store.state.currentGroupViewing!.title
     return {
+      store,
+      router,
       searchIcon,
       postIcon,
-      memberOfGroup
+      memberOfGroup,
+      groupId,
+      groupName,
+      groupTitle
     }
   }
 })

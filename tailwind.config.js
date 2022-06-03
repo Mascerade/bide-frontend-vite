@@ -13,7 +13,11 @@ module.exports = {
         oxygen: ['Oxygen'],
         poppins: ['Poppins'],
         raleway: ['Raleway'],
-        rubik: ['Rubik']
+        rubik: ['Rubik'],
+        'nunito-sans': ['Nunito sans'],
+        'work-sans': ['Work sans'],
+        muli: ['Muli'],
+        mulish: ['Mulish']
       }
     },
     colors: {

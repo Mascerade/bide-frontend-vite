@@ -9,6 +9,10 @@ import 'typeface-montserrat'
 import 'typeface-poppins'
 import 'typeface-raleway'
 import 'typeface-rubik'
+import 'typeface-nunito-sans'
+import 'typeface-work-sans'
+import 'typeface-muli'
+import 'typeface-mulish'
 
 export default defineComponent({
   name: 'App'
