@@ -13,6 +13,7 @@ import 'typeface-nunito-sans'
 import 'typeface-work-sans'
 import 'typeface-muli'
 import 'typeface-mulish'
+import 'typeface-inter'
 
 export default defineComponent({
   name: 'App'

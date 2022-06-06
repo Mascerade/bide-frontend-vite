@@ -38,7 +38,7 @@ const routes = [
     component: Group
   },
   {
-    path: '/group/:groupName/post',
+    path: '/group/:groupName/create-post',
     name: 'Create Post',
     meta: { authentication: 'required', authorizedGroupMember: 'required' },
     component: CreatePost

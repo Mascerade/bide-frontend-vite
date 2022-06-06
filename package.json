@@ -13,6 +13,7 @@
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
     "typeface-comfortaa": "^1.1.13",
+    "typeface-inter": "^3.18.1",
     "typeface-montserrat": "^1.1.13",
     "typeface-muli": "^1.1.13",
     "typeface-mulish": "^1.1.13",

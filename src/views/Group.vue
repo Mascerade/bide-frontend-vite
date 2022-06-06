@@ -3,7 +3,7 @@
     class="flex flex-col w-full items-center bg-light-background"
     v-if="group"
   >
-    <navbar class="w-full shadow-sm bg-white"></navbar>
+    <navbar class="w-full bg-white"></navbar>
     <div class="max-w-[1560px]">
       <group-comfortable v-if="view == 'comfortable'" />
       <group-compact v-if="view == 'compact'" />

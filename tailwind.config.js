@@ -17,7 +17,8 @@ module.exports = {
         'nunito-sans': ['Nunito sans'],
         'work-sans': ['Work sans'],
         muli: ['Muli'],
-        mulish: ['Mulish']
+        mulish: ['Mulish'],
+        inter: ['Inter']
       }
     },
     colors: {
