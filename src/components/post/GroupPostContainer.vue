@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-center xl:w-full xl:mt-3">
+  <div class="flex flex-col-reverse justify-center xl:w-full xl:mt-3">
     <slot v-if="postsExists"></slot>
     <div v-else class="text-center">
       <img src="/src/assets/group-empty-posts.png" alt="" />

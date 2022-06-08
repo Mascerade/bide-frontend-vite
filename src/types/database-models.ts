@@ -17,7 +17,6 @@ export type CreateUser = Omit<
 
 export type Post = {
   id: number
-  postData: string
   postDate: string
   title: string
   content: string
@@ -26,6 +25,11 @@ export type Post = {
   group: Group
   groupId: number
 }
+
+export type CreatePost = Omit<
+  Post,
+  'id' | 'postDate' | 'author' | 'authorId' | 'group' | 'groupId'
+>
 
 export type Group = {
   id: number

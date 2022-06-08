@@ -16,7 +16,7 @@
     <router-link
       title="Post"
       class="flex flex-col justify-center xl:h-10 xl:w-10 xl:mr-4"
-      :to="`/group/${groupName}/post`"
+      :to="`/group/${groupName}/create-post`"
       v-if="memberOfGroup"
     >
       <i

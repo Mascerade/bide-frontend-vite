@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-white rounded-lg">
+  <div class="flex flex-col xl:mb-3 bg-white rounded-lg">
     <!-- Header -->
     <div
       class="flex flex-row items-center xl:p-4 xl:pl-7 xl:pr-7 border-b-[1px] border-gray-100 rounded-t-md"

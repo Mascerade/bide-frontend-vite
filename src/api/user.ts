@@ -4,7 +4,7 @@ import { store } from '@/store'
 import { SERVER } from '@/constants/env'
 import { User } from '@/types/database-models'
 
-export const createUser = async function (user: CreateUser) {
+export const createUser = async (user: CreateUser) => {
   const res = await axios
     .post(`${SERVER}/user`, user, { withCredentials: true })
     .catch((e: AxiosError) => {

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row font-quicksand items-center lg:h-14 lg:pl-10 xl:pl-14 lg:pr-10 xl:pr-14 bg-white shadow-sm"
+    class="flex flex-row font-quicksand items-center lg:h-14 lg:pl-10 xl:pl-14 lg:pr-10 xl:pr-14 bg-white shadow-md z-10"
   >
     <img :src="logo" alt="" class="xl:h-8 xl:w-8 xl:mr-2" />
     <h1
