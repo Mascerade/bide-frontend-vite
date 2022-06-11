@@ -47,17 +47,17 @@
       <div class="flex flex-row flex-grow">
         <i
           title="Discussion"
-          class="fi fi-rr-comment xl:text-2xl xl:mr-8 text-slate-600 hover:cursor-pointer hover:text-green-500"
+          class="fi fi-rr-comment xl:text-xl xl:mr-8 text-slate-600 hover:cursor-pointer hover:text-green-500"
         ></i>
       </div>
       <div class="flex flex-row justify-end">
         <i
           title="Criticize"
-          class="fi fi-rr-megaphone xl:text-2xl xl:mr-8 text-slate-600 hover:cursor-pointer hover:text-red-500"
+          class="fi fi-rr-megaphone xl:text-xl xl:mr-8 text-slate-600 hover:cursor-pointer hover:text-red-500"
         ></i>
         <i
           title="Praise"
-          class="fi fi-rr-hand-holding-heart xl:text-2xl text-slate-600 hover:cursor-pointer hover:text-green-500"
+          class="fi fi-rr-hand-holding-heart xl:text-xl text-slate-600 hover:cursor-pointer hover:text-green-500"
         ></i>
       </div>
     </div>
