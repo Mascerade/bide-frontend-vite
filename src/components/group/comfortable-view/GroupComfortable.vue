@@ -6,6 +6,7 @@
       <group-comfortable-left-side-guest v-else />
       <group-main-content-member v-if="memberOfGroup" />
       <group-main-content-guest v-else />
+      <group-comfortable-users-display></group-comfortable-users-display>
     </group-comfortable-content-container>
   </group-comfortable-container>
 </template>
@@ -19,6 +20,7 @@ import GroupComfortableLeftSideMember from '@/components/group/comfortable-view/
 import GroupComfortableLeftSideGuest from '@/components/group/comfortable-view/GroupComfortableLeftSideGuest.vue'
 import GroupMainContentMember from '@/components/group/main-content/GroupMainContentMember.vue'
 import GroupMainContentGuest from '@/components/group/main-content/GroupMainContentGuest.vue'
+import GroupComfortableUsersDisplay from '@/components/group/comfortable-view/GroupComfortableUsersDisplay.vue'
 import { useStore } from '@/store'
 
 export default defineComponent({
@@ -29,7 +31,8 @@ export default defineComponent({
     GroupComfortableLeftSideMember,
     GroupComfortableLeftSideGuest,
     GroupMainContentMember,
-    GroupMainContentGuest
+    GroupMainContentGuest,
+    GroupComfortableUsersDisplay
   },
   setup() {
     const store = useStore()

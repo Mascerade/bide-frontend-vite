@@ -1,9 +1,7 @@
 <template>
   <div class="flex flex-row xl:p-4 xl:mb-2 rounded-lg bg-white">
-    <span class="flex-grow text-lg text-green-500 font-medium"
-      >{{ title }}
-    </span>
-    <span class="text-xl text-gray-600 font-medium"> {{ content }}</span>
+    <span class="flex-grow text-green-500 font-medium">{{ title }} </span>
+    <span class="text-gray-600 font-medium"> {{ content }}</span>
   </div>
 </template>
 

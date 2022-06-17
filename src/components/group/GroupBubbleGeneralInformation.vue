@@ -1,6 +1,6 @@
 <template>
   <div class="xl:p-5 rounded-lg bg-white">
-    <h2 class="text-lg text-green-500 font-medium">{{ title }}</h2>
+    <h2 class="text-green-500 font-medium">{{ title }}</h2>
     <h3 class="text-gray-800">
       {{ content }} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
       do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
