@@ -47,7 +47,7 @@ export default defineComponent({
 
     let usersInGroup: User[] = []
     groupUsers?.forEach((groupUser) => {
-      usersInGroup.push(groupUser.user)
+      usersInGroup.push(groupUser.user!)
     })
 
     // Separate the users who have tokens and those who do not

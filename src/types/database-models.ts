@@ -20,9 +20,9 @@ export type Post = {
   postDate: string
   title: string
   content: string
-  author: User
+  author?: User
   authorId: User['id']
-  group: Group
+  group?: Group
   groupId: number
 }
 
@@ -50,9 +50,9 @@ export type GeneralToken = {
 
 export type GroupUser = {
   id: number
-  user: User
+  user?: User
   userId: User['id']
-  group: Group
+  group?: Group
   groupId: number
   dateJoined: string
 }
@@ -61,9 +61,18 @@ export type GeneralTokenGroupUser = {
   id: number
   user: User
   userId: User['id']
-  group: Group
+  group?: Group
   groupId: number
-  generalToken: GeneralToken
+  generalToken?: GeneralToken
   generalTokenId: string
   dateAssigned: string
+}
+
+export type JoinGroupRequest = {
+  id: number
+  requestDate: string
+  userRequesting?: User
+  userRequestingId: number
+  group?: Group
+  groupId: number
 }
