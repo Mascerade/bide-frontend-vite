@@ -3,7 +3,7 @@ import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import { Group, Post, User } from '../types/database-models'
 
 type State = {
-  user: User | null
+  user: Required<User> | null
   currentGroupViewing: Group | null
   displayProfileSideNav: boolean
 }
@@ -20,7 +20,7 @@ export const store = createStore<State>({
     toggleProfileSideNav(state) {
       state.displayProfileSideNav = !state.displayProfileSideNav
     },
-    changeUser(state, user: User) {
+    changeUser(state, user: Required<User>) {
       console.log(user)
       state.user = user
     },

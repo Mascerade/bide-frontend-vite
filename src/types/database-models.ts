@@ -38,14 +38,14 @@ export type Group = {
   description: string
   posts?: Post[]
   groupUsers?: GroupUser[]
-  userGeneralTokens?: GeneralTokenGroupUser
+  userGeneralTokens?: GeneralTokenGroupUser[]
 }
 
 export type GeneralToken = {
   id: string
   title: string
   description: string
-  groupUsers?: GeneralTokenGroupUser[]
+  groupUsers?: GeneralTokenGroupUser[] | null
 }
 
 export type GroupUser = {
